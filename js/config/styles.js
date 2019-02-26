@@ -7,7 +7,7 @@ export const dimensions = {
 };
 
 export const colors = {
-  primary: '#000000',
+  // primary: '#000000',
   neutralLight: '#e6e6e6', // light grey
   neutralDark: '#999999', // med grey
   brandPrimary: '#cf392a', // red

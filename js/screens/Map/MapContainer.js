@@ -35,7 +35,7 @@ class MapContainer extends Component {
           // if (error) return <Text>{`Error! ${error.message}`}</Text>;
           // console.log(data);
           console.log(data);
-          return <Faves data={data} />;
+          return <Map data={data} />;
         }}
       </Query>
     );
