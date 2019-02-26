@@ -1,19 +1,20 @@
 import { StyleSheet } from 'react-native';
+import {
+  colors,
+  font,
+  separator,
+  margin,
+  padding,
+  container
+} from '../../config/styles';
 
 // define your styles
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2c3e50'
+    ...container
   },
-  list: { marginTop: 50 },
-  contact: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    // marginLeft: 10
-    flex: 1
+  separator: {
+    ...separator
   }
 });
 

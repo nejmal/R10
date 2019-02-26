@@ -1,14 +1,23 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
-
 import styles from './styles';
 
 renderSeparator = () => {
-  return <View style={styles.separator} />;
+  return (
+    <View
+      style={{
+        height: 1,
+        backgroundColor: '#CED0CE',
+        // marginTop: 10,
+        // marginBottom: 10
+        marginVertical: 10
+      }}
+    />
+  );
 };
 
 // (Stateless) Markup only
-const About = props => {
+const Speaker = props => {
   return (
     <View style={styles.container}>
       <FlatList
@@ -27,4 +36,4 @@ const About = props => {
   );
 };
 
-export default About;
+export default Speaker;
