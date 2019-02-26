@@ -11,6 +11,10 @@ class ScheduleContainer extends Component {
     super(props);
   }
 
+  static navigationOptions = {
+    title: 'Schedule'
+  };
+
   render() {
     return (
       <Query

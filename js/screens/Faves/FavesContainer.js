@@ -12,6 +12,10 @@ class FavesContainer extends Component {
     super(props);
   }
 
+  static navigationOptions = {
+    title: 'Faves'
+  };
+
   render() {
     return (
       <Query

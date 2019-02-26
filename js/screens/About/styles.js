@@ -5,7 +5,9 @@ import {
   separator,
   margin,
   padding,
-  container
+  container,
+  heading,
+  subheading
 } from '../../config/styles';
 
 // define your styles
@@ -15,6 +17,12 @@ const styles = StyleSheet.create({
   },
   separator: {
     ...separator
+  },
+  heading: {
+    ...heading
+  },
+  subheading: {
+    ...subheading
   }
 });
 

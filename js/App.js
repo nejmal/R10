@@ -3,13 +3,14 @@ import { ApolloProvider } from 'react-apollo';
 import client from './config/api';
 import { StyleSheet, Text, View } from 'react-native';
 import About from './screens/About';
+import RootStackNavigator from './navigation/RootStackNavigator';
 
 export default class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
         {/* <View style={styles.container}> */}
-        <About />
+        <RootStackNavigator />
         {/* </View> */}
       </ApolloProvider>
     );

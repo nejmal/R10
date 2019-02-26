@@ -3,12 +3,12 @@ import { View, Text } from 'react-native';
 import styles from './styles';
 
 // (Stateless) Markup only
-const Faves = props => {
+const Map = props => {
   return (
     <View style={styles.container}>
-      <Text>This is faves.</Text>
+      <Text>This is map.</Text>
     </View>
   );
 };
 
-export default Faves;
+export default Map;

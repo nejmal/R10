@@ -1,18 +1,19 @@
+// import liraries
 import React, { Component } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
-import About from './About';
+import Map from './Map';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
 // create a component
 // (Stateful) Logic and state
-class SpeakerContainer extends Component {
+class MapContainer extends Component {
   constructor(props) {
     super(props);
   }
 
   static navigationOptions = {
-    title: 'Speaker'
+    title: 'Map'
   };
 
   render() {
@@ -34,7 +35,7 @@ class SpeakerContainer extends Component {
           // if (error) return <Text>{`Error! ${error.message}`}</Text>;
           // console.log(data);
           console.log(data);
-          return <Speaker data={data} />;
+          return <Faves data={data} />;
         }}
       </Query>
     );
@@ -42,4 +43,4 @@ class SpeakerContainer extends Component {
 }
 
 //make this component available to the app
-export default SpeakerContainer;
+export default MapContainer;

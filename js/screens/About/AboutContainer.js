@@ -16,6 +16,10 @@ class AboutContainer extends Component {
     super(props);
   }
 
+  static navigationOptions = {
+    title: 'About'
+  };
+
   render() {
     return (
       <Query

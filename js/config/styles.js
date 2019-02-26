@@ -50,3 +50,13 @@ export const separator = {
   backgroundColor: colors.neutralLight,
   marginVertical: 10
 };
+
+export const heading = {
+  fontSize: fonts.lg,
+  paddingVertical: padding.sm
+};
+
+export const subheading = {
+  color: colors.brandSecondary,
+  paddingVertical: padding.sm
+};

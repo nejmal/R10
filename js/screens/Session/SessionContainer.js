@@ -16,6 +16,10 @@ class SessionContainer extends Component {
     super(props);
   }
 
+  static navigationOptions = {
+    title: 'Session'
+  };
+
   render() {
     return (
       <Query
