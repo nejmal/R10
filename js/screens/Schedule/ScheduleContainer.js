@@ -5,6 +5,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
 import { colors, fonts } from '../../config/styles';
+import styles from './styles';
 
 // create a component
 // (Stateful) Logic and state
@@ -29,14 +30,27 @@ class ScheduleContainer extends Component {
             allSessions {
               id
               title
+              description
               location
               startTime
+              speaker {
+                bio
+                id
+                image
+                name
+                url
+              }
             }
           }
         `}
       >
         {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator size='large' />;
+          if (loading)
+            return (
+              <View style={styles.loader}>
+                <ActivityIndicator size='large' />
+              </View>
+            );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
           // console.log(data);

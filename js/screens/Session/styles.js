@@ -1,19 +1,35 @@
 import { StyleSheet } from 'react-native';
+import {
+  loader,
+  container,
+  separator,
+  heading,
+  colors,
+  subtitle,
+  paragraph
+} from '../../config/styles';
 
 // define your styles
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2c3e50'
+  loader: {
+    ...loader
   },
-  list: { marginTop: 50 },
-  contact: {
-    // flexDirection: 'row',
-    // alignItems: 'center',
-    // marginLeft: 10
-    flex: 1
+  container: {
+    ...container
+  },
+  locationWrapper: {
+    justifyContent: 'space-between',
+    flexDirection: 'row'
+  },
+  subtitle: {
+    ...subtitle
+  },
+  heading: { ...heading },
+  separator: {
+    ...separator
+  },
+  paragraph: {
+    ...paragraph
   }
 });
 

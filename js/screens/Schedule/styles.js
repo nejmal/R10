@@ -7,7 +7,8 @@ import {
   padding,
   container,
   heading,
-  subheading
+  subheading,
+  loader
 } from '../../config/styles';
 
 // define your styles
@@ -30,6 +31,9 @@ const styles = StyleSheet.create({
   },
   location: {
     color: colors.neutralDark
+  },
+  loader: {
+    ...loader
   }
 });
 

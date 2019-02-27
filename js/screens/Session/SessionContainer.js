@@ -9,6 +9,7 @@ import Session from './Session';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import { colors, fonts } from '../../config/styles';
+import styles from './styles';
 // create a component
 // (Stateful) Logic and state
 class SessionContainer extends Component {
@@ -49,11 +50,23 @@ class SessionContainer extends Component {
         `}
       >
         {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator size='large' />;
+          if (loading)
+            return (
+              <View style={styles.loader}>
+                <ActivityIndicator size='large' />
+              </View>
+            );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
-          // console.log(data);
-          return <Session data={data} navigation={navigation} />;
+          const sessionData = this.props.navigation.getParam('sessionData');
+          console.log(sessionData);
+          return (
+            <Session data={sessionData} navigation={navigation} />
+            //   <Schedule
+            //   data={formatSessionData(data.allSessions)}
+            //   navigation={this.props.navigation}
+            // />
+          );
         }}
       </Query>
     );

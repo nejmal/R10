@@ -34,8 +34,8 @@ export const padding = {
 export const fonts = {
   sm: 12,
   md: 18,
-  lg: 28
-  // primary: 'Cochin'
+  lg: 28,
+  primary: 'Montserrat'
 };
 
 export const container = {
@@ -60,3 +60,15 @@ export const subheading = {
   color: colors.brandSecondary,
   paddingVertical: padding.sm
 };
+
+export const subtitle = {
+  color: colors.neutralDark,
+  paddingVertical: padding.sm
+};
+
+export const loader = {
+  flex: 1,
+  justifyContent: 'center'
+};
+
+export const paragraph = { lineHeight: 20 };

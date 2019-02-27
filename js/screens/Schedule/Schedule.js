@@ -12,7 +12,7 @@ const Schedule = ({ navigation, data }) => {
         renderItem={({ item, index, section }) => (
           <TouchableHighlight
             onPress={() =>
-              navigation.navigate('Session', { title: item.title })
+              navigation.navigate('Session', { sessionData: item })
             }
           >
             <View style={styles.section}>

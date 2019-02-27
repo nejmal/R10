@@ -13,7 +13,7 @@ const About = props => {
     <View style={styles.container}>
       <ScrollView style={styles.scroll}>
         <Image source={require('../../assets/images/r10_logo.png')} />
-        {<View style={styles.separator} />}
+        <View style={styles.separator} />
         <Text>
           R10 is a conference that focuses on just about any topic related to
           dev.
