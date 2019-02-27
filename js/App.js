@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { ApolloProvider } from 'react-apollo';
 import client from './config/api';
 import { StyleSheet, Text, View } from 'react-native';
-import About from './screens/About';
 import RootStackNavigator from './navigation/RootStackNavigator';
+import { StatusBar } from 'react-native';
 
 export default class App extends Component {
   render() {
+    StatusBar.setBarStyle('light-content', true);
     return (
       <ApolloProvider client={client}>
         {/* <View style={styles.container}> */}

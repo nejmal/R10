@@ -8,7 +8,7 @@ import { View, Text, ActivityIndicator } from 'react-native';
 import Session from './Session';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-
+import { colors, fonts } from '../../config/styles';
 // create a component
 // (Stateful) Logic and state
 class SessionContainer extends Component {
@@ -17,29 +17,43 @@ class SessionContainer extends Component {
   }
 
   static navigationOptions = {
-    title: 'Session'
+    title: 'Session',
+    headerTintColor: colors.bgLight,
+    headerTitleStyle: {
+      fontSize: fonts.md
+    }
   };
 
   render() {
+    const { navigation } = this.props;
+
     return (
       <Query
         query={gql`
           {
-            allConducts {
+            allSessions {
               id
               title
               description
-              order
+              location
+              startTime
+              speaker {
+                bio
+                id
+                image
+                name
+                url
+              }
             }
           }
         `}
       >
         {({ loading, error, data }) => {
-          // if (loading) return <ActivityIndicator size='large' />;
-          // if (error) return <Text>{`Error! ${error.message}`}</Text>;
+          if (loading) return <ActivityIndicator size='large' />;
+          if (error) return <Text>{`Error! ${error.message}`}</Text>;
+
           // console.log(data);
-          console.log(data);
-          return <Session data={data} />;
+          return <Session data={data} navigation={navigation} />;
         }}
       </Query>
     );

@@ -3,6 +3,7 @@ import { View, Text, ActivityIndicator } from 'react-native';
 import Speaker from './Speaker';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import { colors, fonts } from '../../config/styles';
 
 // create a component
 // (Stateful) Logic and state
@@ -12,7 +13,11 @@ class SpeakerContainer extends Component {
   }
 
   static navigationOptions = {
-    title: 'Speaker'
+    title: 'Speaker',
+    headerTintColor: colors.bgLight,
+    headerTitleStyle: {
+      fontSize: fonts.md
+    }
   };
 
   render() {
@@ -20,20 +25,28 @@ class SpeakerContainer extends Component {
       <Query
         query={gql`
           {
-            allConducts {
+            allSessions {
               id
               title
               description
-              order
+              location
+              startTime
+              speaker {
+                bio
+                id
+                image
+                name
+                url
+              }
             }
           }
         `}
       >
         {({ loading, error, data }) => {
-          // if (loading) return <ActivityIndicator size='large' />;
-          // if (error) return <Text>{`Error! ${error.message}`}</Text>;
+          if (loading) return <ActivityIndicator size='large' />;
+          if (error) return <Text>{`Error! ${error.message}`}</Text>;
+
           // console.log(data);
-          console.log(data);
           return <Speaker data={data} />;
         }}
       </Query>

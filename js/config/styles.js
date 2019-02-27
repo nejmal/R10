@@ -41,7 +41,7 @@ export const fonts = {
 export const container = {
   flex: 1,
   backgroundColor: colors.bgLight,
-  marginTop: margin.lg * 2,
+  // marginTop: margin.lg * 2,
   padding: padding.md
 };
 

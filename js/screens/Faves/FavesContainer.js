@@ -4,6 +4,7 @@ import { View, Text, ActivityIndicator } from 'react-native';
 import Faves from './Faves';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import { colors, fonts } from '../../config/styles';
 
 // create a component
 // (Stateful) Logic and state
@@ -13,7 +14,11 @@ class FavesContainer extends Component {
   }
 
   static navigationOptions = {
-    title: 'Faves'
+    title: 'Faves',
+    headerTintColor: colors.bgLight,
+    headerTitleStyle: {
+      fontSize: fonts.md
+    }
   };
 
   render() {

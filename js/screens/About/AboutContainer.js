@@ -8,6 +8,7 @@ import { View, Text, ActivityIndicator } from 'react-native';
 import About from './About';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import { colors, fonts } from '../../config/styles';
 
 // create a component
 // (Stateful) Logic and state
@@ -17,7 +18,11 @@ class AboutContainer extends Component {
   }
 
   static navigationOptions = {
-    title: 'About'
+    title: 'About',
+    headerTintColor: colors.bgLight,
+    headerTitleStyle: {
+      fontSize: fonts.md
+    }
   };
 
   render() {
