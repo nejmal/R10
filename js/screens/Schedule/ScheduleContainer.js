@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
+import Text from '../../components/MyAppText.js';
 import Schedule from './Schedule';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import FavesContext from '../../context';
 import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
 import { colors, fonts } from '../../config/styles';
 import styles from './styles';
@@ -55,10 +57,14 @@ class ScheduleContainer extends Component {
 
           // console.log(data);
           return (
-            <Schedule
-              data={formatSessionData(data.allSessions)}
-              navigation={this.props.navigation}
-            />
+            <FavesContext.Consumer>
+              {({ faveIds }) => (
+                <Schedule
+                  data={formatSessionData(data.allSessions)}
+                  navigation={this.props.navigation}
+                />
+              )}
+            </FavesContext.Consumer>
           );
         }}
       </Query>

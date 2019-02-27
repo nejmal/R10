@@ -8,6 +8,7 @@ import { View, Text, ActivityIndicator, Button } from 'react-native';
 import Session from './Session';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import FavesContext from '../../context';
 import { colors, fonts } from '../../config/styles';
 import styles from './styles';
 // create a component
@@ -73,11 +74,15 @@ class SessionContainer extends Component {
           const sessionData = this.props.navigation.getParam('sessionData');
 
           return (
-            <Session data={sessionData} navigation={navigation} />
-            //   <Schedule
-            //   data={formatSessionData(data.allSessions)}
-            //   navigation={this.props.navigation}
-            // />
+            <FavesContext.Consumer>
+              {({ faveIds }) => (
+                <Session data={sessionData} navigation={navigation} />
+                //   <Schedule
+                //   data={formatSessionData(data.allSessions)}
+                //   navigation={this.props.navigation}
+                // />
+              )}
+            </FavesContext.Consumer>
           );
         }}
       </Query>

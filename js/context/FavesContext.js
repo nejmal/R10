@@ -6,6 +6,7 @@ import React, { Component, createContext } from 'react';
 import { setFave, getFaves, removeFave } from '../config/models';
 
 // 2. now we want to create context
+// no need to say React.createContext() since it was deconstructed above when importing it
 const FavesContext = createContext();
 
 // 3. create a provider class, we will wrap our app with this so all the screens can have reference to what is created here

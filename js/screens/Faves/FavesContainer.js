@@ -4,6 +4,7 @@ import { View, Text, ActivityIndicator } from 'react-native';
 import Faves from './Faves';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import FavesContext from '../../context';
 import { colors, fonts } from '../../config/styles';
 
 // create a component
@@ -36,11 +37,15 @@ class FavesContainer extends Component {
         `}
       >
         {({ loading, error, data }) => {
-          // if (loading) return <ActivityIndicator size='large' />;
-          // if (error) return <Text>{`Error! ${error.message}`}</Text>;
-          // console.log(data);
+          if (loading) return <ActivityIndicator size='large' />;
+          if (error) return <Text>{`Error! ${error.message}`}</Text>;
+
           console.log(data);
-          return <Faves data={data} />;
+          return (
+            <FavesContext.Consumer>
+              {({ faveIds }) => <Faves data={data} />}
+            </FavesContext.Consumer>
+          );
         }}
       </Query>
     );
