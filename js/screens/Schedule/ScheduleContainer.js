@@ -62,6 +62,7 @@ class ScheduleContainer extends Component {
                 <Schedule
                   data={formatSessionData(data.allSessions)}
                   navigation={this.props.navigation}
+                  faveIds={faveIds}
                 />
               )}
             </FavesContext.Consumer>
@@ -72,5 +73,5 @@ class ScheduleContainer extends Component {
   }
 }
 
-//make this component available to the app
+// make this component available to the app
 export default ScheduleContainer;

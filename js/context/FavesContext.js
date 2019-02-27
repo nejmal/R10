@@ -35,7 +35,7 @@ class FavesProvider extends Component {
       const faveIds = allFaves.map(fave => fave[0]);
       // how do we set state for fave ids? use set state
       // since the key and value are the same, no need to set key and value {faveIds: faveIds}, can use {faveIds}
-      this.setState({ faveIds });
+      this.setState({ faveIds: faveIds.filter(id => id !== 'uuid') });
     } catch (error) {
       console.log(error);
     }

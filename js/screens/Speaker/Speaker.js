@@ -3,10 +3,11 @@ import { View, Button, TouchableHighlight, Image } from 'react-native';
 import Text from '../../components/MyAppText.js';
 // import GradientButton from '../../components/Button.js';
 import styles from './styles';
+import FaveButton from '../../components/FaveButton';
 
 // (Stateless) Markup only
 const Speaker = ({ data, navigation }) => {
-  console.log(data);
+  // console.log(data);
   onPress = () => {
     console.log(data);
   };
@@ -32,10 +33,7 @@ const Speaker = ({ data, navigation }) => {
 
         <Text style={styles.paragraph}>{data.speaker.bio}</Text>
 
-        <View>
-          {/* <GradientButton /> */}
-          {/* <TouchableHighlight>Read More on Wikipedia</TouchableHighlight> */}
-        </View>
+        <View>{/* <FaveButton /> */}</View>
       </View>
     </View>
   );

@@ -9,7 +9,9 @@ import {
   paragraph,
   red,
   black,
-  padding
+  padding,
+  button,
+  margin
 } from '../../config/styles';
 
 // define your styles
@@ -40,7 +42,16 @@ const styles = StyleSheet.create({
     paddingVertical: padding.xs
   },
   red: { ...red },
-  black: { ...black }
+  black: { ...black },
+  // FaveButton
+  linearGradient: {
+    // flex: 1,
+    borderRadius: 50,
+    marginVertical: margin.md,
+    marginHorizontal: margin.lg * 2
+  },
+  button: { ...button }
+  //
 });
 
 export default styles;

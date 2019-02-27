@@ -3,10 +3,11 @@ import { View, SectionList, TouchableHighlight } from 'react-native';
 import Text from '../../components/MyAppText.js';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
 // (Stateless) Markup only
-const Schedule = ({ navigation, data }) => {
+const Schedule = ({ navigation, data, faveIds }) => {
   return (
     <View style={styles.container}>
       <SectionList
@@ -20,7 +21,17 @@ const Schedule = ({ navigation, data }) => {
               <Text style={[styles.subtitle, styles.black, styles.pb]}>
                 {item.title}
               </Text>
-              <Text style={styles.location}>{item.location}</Text>
+              <View style={styles.locationWrapper}>
+                <Text style={styles.location}>{item.location}</Text>
+                {faveIds.includes(item.id) && (
+                  <Ionicons
+                    name='ios-heart'
+                    size={16}
+                    color='#cf392a'
+                    // style={{ padding: 8 }}
+                  />
+                )}
+              </View>
             </View>
           </TouchableHighlight>
         )}

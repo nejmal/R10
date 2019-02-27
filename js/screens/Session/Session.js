@@ -3,11 +3,17 @@ import { View, Image, TouchableHighlight } from 'react-native';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
 import Text from '../../components/MyAppText.js';
+import FavesContext from '../../context';
+import LinearGradient from 'react-native-linear-gradient';
+// import FaveButton from '../../components/FaveButton';
 import styles from './styles';
 
 // (Stateless) Markup only
-const Session = ({ navigation, data }) => {
-  // console.log(data);
+const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
+  const faveSession = faveIds.find(fave => fave === data.id);
+  console.log('DATA--------------', data);
+  console.log('faveSession', faveSession);
+
   return (
     <View style={styles.container}>
       <View style={styles.locationWrapper}>
@@ -38,6 +44,29 @@ const Session = ({ navigation, data }) => {
         </View>
       </TouchableHighlight>
       <View style={styles.separator} />
+
+      <View>
+        <TouchableHighlight
+          onPress={() => {
+            if (faveSession) {
+              removeFaveId(data.id);
+            } else {
+              setFaveId(data.id);
+            }
+          }}
+        >
+          <LinearGradient
+            colors={['#8797d6', '#9963ea']}
+            start={{ x: 1.0, y: 0.0 }}
+            end={{ x: 0.0, y: 1.0 }}
+            style={styles.linearGradient}
+          >
+            <Text style={styles.button}>
+              {faveSession ? 'Remove from Faves' : 'Add to Faves'}
+            </Text>
+          </LinearGradient>
+        </TouchableHighlight>
+      </View>
     </View>
   );
 };

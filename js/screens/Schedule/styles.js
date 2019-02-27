@@ -12,7 +12,8 @@ import {
   subtitle,
   subtitle2,
   black,
-  pb
+  pb,
+  centerRow
 } from '../../config/styles';
 
 // define your styles
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
   loader: {
     ...loader
   },
+  locationWrapper: { ...centerRow, justifyContent: 'space-between' },
   location: { ...subtitle2, color: colors.neutralDark }
 });
 

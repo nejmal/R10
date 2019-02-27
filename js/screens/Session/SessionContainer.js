@@ -75,12 +75,14 @@ class SessionContainer extends Component {
 
           return (
             <FavesContext.Consumer>
-              {({ faveIds }) => (
-                <Session data={sessionData} navigation={navigation} />
-                //   <Schedule
-                //   data={formatSessionData(data.allSessions)}
-                //   navigation={this.props.navigation}
-                // />
+              {({ faveIds, setFaveId, removeFaveId }) => (
+                <Session
+                  data={sessionData}
+                  navigation={navigation}
+                  faveIds={faveIds}
+                  setFaveId={setFaveId}
+                  removeFaveId={removeFaveId}
+                />
               )}
             </FavesContext.Consumer>
           );

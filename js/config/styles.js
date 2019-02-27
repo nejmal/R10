@@ -28,6 +28,7 @@ export const black = {
 export const center = { justifyContent: 'center', alignItems: 'center' };
 
 export const centerRow = {
+  flexDirection: 'row',
   justifyContent: 'center'
 };
 
@@ -59,7 +60,8 @@ export const fonts = {
   sm: 16,
   md: 18,
   lg: 26,
-  xl: 28
+  xl: 28,
+  bold: '500'
 };
 
 export const container = {
@@ -77,25 +79,25 @@ export const separator = {
 export const heading = {
   fontSize: fonts.lg,
   paddingVertical: padding.xs,
-  fontWeight: '500'
+  fontWeight: fonts.bold
 };
 
 export const subheading = {
   color: colors.brandSecondary,
   paddingVertical: padding.xs,
-  fontWeight: '500'
+  fontWeight: fonts.bold
 };
 
 export const subtitle = {
   color: colors.neutralDark,
   paddingVertical: padding.xs,
   fontSize: fonts.sm,
-  fontWeight: '500'
+  fontWeight: fonts.bold
 };
 
 export const subtitle2 = {
   fontSize: fonts.xs,
-  fontWeight: '500'
+  fontWeight: fonts.bold
 };
 
 export const loader = {
@@ -105,4 +107,13 @@ export const loader = {
 
 export const paragraph = { lineHeight: 30 };
 
-export const button = { borderRadius: 20 };
+export const button = {
+  // borderRadius: 20
+  color: colors.bgLight,
+  backgroundColor: 'transparent',
+  textAlign: 'center',
+  // marginVertical: margin.sm,
+  paddingVertical: padding.sm,
+  fontWeight: fonts.bold,
+  fontSize: fonts.sm
+};
