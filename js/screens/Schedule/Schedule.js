@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, SectionList, TouchableHighlight } from 'react-native';
+import { View, SectionList, TouchableHighlight } from 'react-native';
+import Text from '../../components/MyAppText.js';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
 import styles from './styles';
@@ -16,7 +17,9 @@ const Schedule = ({ navigation, data }) => {
             }
           >
             <View style={styles.section}>
-              <Text style={styles.title}>{item.title}</Text>
+              <Text style={[styles.subtitle, styles.black, styles.pb]}>
+                {item.title}
+              </Text>
               <Text style={styles.location}>{item.location}</Text>
             </View>
           </TouchableHighlight>

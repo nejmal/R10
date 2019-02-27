@@ -21,6 +21,8 @@ class SpeakerContainer extends Component {
   };
 
   render() {
+    const { navigation } = this.props;
+
     return (
       <Query
         query={gql`
@@ -46,8 +48,9 @@ class SpeakerContainer extends Component {
           if (loading) return <ActivityIndicator size='large' />;
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
+          const speakerData = this.props.navigation.getParam('speakerData');
           // console.log(data);
-          return <Speaker data={data} />;
+          return <Speaker data={speakerData} navigation={navigation} />;
         }}
       </Query>
     );

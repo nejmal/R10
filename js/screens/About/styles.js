@@ -7,7 +7,9 @@ import {
   padding,
   container,
   heading,
-  subheading
+  subheading,
+  center,
+  pb
 } from '../../config/styles';
 
 // define your styles
@@ -23,7 +25,9 @@ const styles = StyleSheet.create({
   },
   subheading: {
     ...subheading
-  }
+  },
+  center: { ...center },
+  pb: { ...pb }
 });
 
 export default styles;

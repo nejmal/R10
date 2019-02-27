@@ -6,7 +6,10 @@ import {
   heading,
   colors,
   subtitle,
-  paragraph
+  paragraph,
+  red,
+  black,
+  padding
 } from '../../config/styles';
 
 // define your styles
@@ -30,7 +33,14 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     ...paragraph
-  }
+  },
+  speaker: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: padding.xs
+  },
+  red: { ...red },
+  black: { ...black }
 });
 
 export default styles;

@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, FlatList, Image, ScrollView } from 'react-native';
+import { View, FlatList, Image, ScrollView } from 'react-native';
+import Text from '../../components/MyAppText.js';
 import { renderSeparator } from '../../lib/helpers/separator';
 import styles from './styles';
 
@@ -12,7 +13,10 @@ const About = props => {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scroll}>
-        <Image source={require('../../assets/images/r10_logo.png')} />
+        <View style={[styles.center, styles.pb]}>
+          <Image source={require('../../assets/images/r10_logo.png')} />
+        </View>
+
         <View style={styles.separator} />
         <Text>
           R10 is a conference that focuses on just about any topic related to

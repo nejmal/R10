@@ -8,7 +8,11 @@ import {
   container,
   heading,
   subheading,
-  loader
+  loader,
+  subtitle,
+  subtitle2,
+  black,
+  pb
 } from '../../config/styles';
 
 // define your styles
@@ -19,22 +23,24 @@ const styles = StyleSheet.create({
   },
   header: {
     paddingHorizontal: padding.sm,
-    paddingVertical: padding.sm / 2,
-    backgroundColor: colors.neutralLight
+    paddingVertical: padding.xs / 2,
+    backgroundColor: colors.neutralLight,
+    ...subtitle2
   },
   section: {
     padding: padding.sm
   },
-  title: {
-    fontSize: fonts.md,
-    paddingBottom: padding.sm
-  },
-  location: {
-    color: colors.neutralDark
-  },
+  // title: {
+  //   fontSize: fonts.md,
+  //   paddingBottom: padding.sm
+  // },
+  subtitle: { ...subtitle, paddingVertical: 0 },
+  black: { ...black },
+  pb: { ...pb },
   loader: {
     ...loader
-  }
+  },
+  location: { ...subtitle2, color: colors.neutralDark }
 });
 
 export default styles;

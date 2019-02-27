@@ -7,7 +7,7 @@ export const dimensions = {
 };
 
 export const colors = {
-  // primary: '#000000',
+  primary: '#000000',
   neutralLight: '#e6e6e6', // light grey
   neutralDark: '#999999', // med grey
   brandPrimary: '#cf392a', // red
@@ -15,6 +15,24 @@ export const colors = {
   accent: '#8797d6', // blue
   bgLight: '#ffffff',
   bgDark: '#000000'
+};
+
+export const red = {
+  color: colors.brandPrimary
+};
+
+export const black = {
+  color: colors.primary
+};
+
+export const center = { justifyContent: 'center', alignItems: 'center' };
+
+export const centerRow = {
+  justifyContent: 'center'
+};
+
+export const centerCol = {
+  alignItems: 'center'
 };
 
 export const margin = {
@@ -25,45 +43,59 @@ export const margin = {
 };
 
 export const padding = {
-  sm: 10,
+  xs: 10,
+  sm: 15,
   md: 20,
   lg: 30,
   xl: 40
 };
 
+export const pb = {
+  paddingBottom: padding.xs
+};
+
 export const fonts = {
-  sm: 12,
+  xs: 14,
+  sm: 16,
   md: 18,
-  lg: 28,
-  primary: 'Montserrat'
+  lg: 26,
+  xl: 28
 };
 
 export const container = {
   flex: 1,
   backgroundColor: colors.bgLight,
-  // marginTop: margin.lg * 2,
   padding: padding.md
 };
 
 export const separator = {
   height: 1,
   backgroundColor: colors.neutralLight,
-  marginVertical: 10
+  marginVertical: 5
 };
 
 export const heading = {
   fontSize: fonts.lg,
-  paddingVertical: padding.sm
+  paddingVertical: padding.xs,
+  fontWeight: '500'
 };
 
 export const subheading = {
   color: colors.brandSecondary,
-  paddingVertical: padding.sm
+  paddingVertical: padding.xs,
+  fontWeight: '500'
 };
 
 export const subtitle = {
   color: colors.neutralDark,
-  paddingVertical: padding.sm
+  paddingVertical: padding.xs,
+  fontSize: fonts.sm,
+  fontWeight: '500'
+};
+
+export const subtitle2 = {
+  fontSize: fonts.xs,
+  fontWeight: '500'
 };
 
 export const loader = {
@@ -71,4 +103,6 @@ export const loader = {
   justifyContent: 'center'
 };
 
-export const paragraph = { lineHeight: 20 };
+export const paragraph = { lineHeight: 30 };
+
+export const button = { borderRadius: 20 };

@@ -4,7 +4,7 @@
 
 // import liraries
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, Text, ActivityIndicator, Button } from 'react-native';
 import Session from './Session';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -17,12 +17,24 @@ class SessionContainer extends Component {
     super(props);
   }
 
-  static navigationOptions = {
-    title: 'Session',
-    headerTintColor: colors.bgLight,
-    headerTitleStyle: {
-      fontSize: fonts.md
-    }
+  static navigationOptions = ({ navigation }) => {
+    const params = navigation.state.params || {};
+
+    return {
+      // headerLeft: (
+      //   <Button
+      //     onPress={() => navigation.navigate('Speaker', { speakerData: item })}
+      //     title='Info'
+      //     color='#fff'
+      //   />
+      // ),
+      // /* the rest of this config is unchanged */
+      title: 'Session',
+      headerTintColor: colors.bgLight,
+      headerTitleStyle: {
+        fontSize: fonts.md
+      }
+    };
   };
 
   render() {
@@ -59,7 +71,7 @@ class SessionContainer extends Component {
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
           const sessionData = this.props.navigation.getParam('sessionData');
-          console.log(sessionData);
+
           return (
             <Session data={sessionData} navigation={navigation} />
             //   <Schedule
