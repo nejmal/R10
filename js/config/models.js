@@ -52,3 +52,6 @@ export const removeFave = async faveId => {
     console.log(error);
   }
 };
+
+// now that we have these, how do we use it anywhere?
+// we will need to use context
