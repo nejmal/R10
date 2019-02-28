@@ -1,20 +1,43 @@
 import { StyleSheet } from 'react-native';
+import {
+  colors,
+  fonts,
+  separator,
+  margin,
+  padding,
+  container,
+  heading,
+  subheading,
+  loader,
+  subtitle,
+  subtitle2,
+  black,
+  pb,
+  centerRow
+} from '../../config/styles';
 
-// define your styles
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2c3e50'
+  container: { ...container, padding: 0 },
+  separator: {
+    ...separator
   },
-  list: { marginTop: 50 },
-  contact: {
-    // flexDirection: 'row',
-    // alignItems: 'center',
-    // marginLeft: 10
-    flex: 1
-  }
+  header: {
+    paddingHorizontal: padding.sm,
+    paddingVertical: padding.xs / 2,
+    backgroundColor: colors.neutralLight,
+    ...subtitle2
+  },
+  section: {
+    padding: padding.sm
+  },
+  subtitle: { ...subtitle, paddingVertical: 0 },
+  black: { ...black },
+  pb: { ...pb },
+  loader: {
+    ...loader
+  },
+  locationWrapper: { ...centerRow, justifyContent: 'space-between' },
+  location: { ...subtitle2, color: colors.neutralDark }
 });
 
 export default styles;

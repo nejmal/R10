@@ -7,7 +7,8 @@ import {
   paragraph,
   margin,
   subtitle,
-  button
+  button,
+  centerRow
 } from '../../config/styles';
 
 // define your styles
@@ -18,13 +19,18 @@ const styles = StyleSheet.create({
   },
   modal: {
     backgroundColor: colors.bgLight,
-    margin: margin.md,
+    margin: margin.sm * 1.5,
     marginTop: margin.lg,
     borderRadius: 10,
     flex: 1
   },
-  titleWrapper: { flexDirection: 'row', marginTop: margin.lg * 2 },
-  subtitle: { ...subtitle, color: colors.bgLight, textAlign: 'center' },
+  titleWrapper: {
+    flexDirection: 'row',
+    marginTop: margin.lg * 2,
+    justifyContent: 'center'
+  },
+  grow: { flex: 1 },
+  subtitle: { ...subtitle, color: colors.bgLight, marginRight: 30 },
   center: { ...center, paddingTop: padding.md },
   heading: { ...heading, paddingVertical: padding.md },
   paragraph: { ...paragraph, paddingHorizontal: padding.md },

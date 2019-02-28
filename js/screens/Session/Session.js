@@ -1,12 +1,18 @@
 import React from 'react';
-import { View, Image, TouchableHighlight } from 'react-native';
+import {
+  View,
+  Image,
+  TouchableHighlight,
+  TouchableOpacity
+} from 'react-native';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
 import Text from '../../components/MyAppText.js';
 import FavesContext from '../../context';
 import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-// import FaveButton from '../../components/FaveButton';
+import FaveButton from '../../components/Button';
+import { colors } from '../../config/styles';
 import styles from './styles';
 
 // (Stateless) Markup only
@@ -24,7 +30,7 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
             name='ios-heart'
             size={18}
             style={{ paddingVertical: 8 }}
-            color='#cf392a'
+            color={colors.brandPrimary}
           />
         )}
       </View>
@@ -35,6 +41,7 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
       <Text style={styles.paragraph}>{data.description}</Text>
       <Text style={styles.subtitle}>Presented by:</Text>
       <TouchableHighlight
+        underlayColor='#e6e6e6'
         onPress={() => navigation.navigate('Speaker', { speakerData: data })}
       >
         <View style={styles.speaker}>
@@ -54,7 +61,7 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
       </TouchableHighlight>
       <View style={styles.separator} />
 
-      <TouchableHighlight
+      <TouchableOpacity
         onPress={() => {
           if (faveSession) {
             removeFaveId(data.id);
@@ -63,7 +70,7 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
           }
         }}
       >
-        <LinearGradient
+        {/* <LinearGradient
           colors={['#8797d6', '#9963ea']}
           start={{ x: 1.0, y: 0.0 }}
           end={{ x: 0.0, y: 1.0 }}
@@ -72,8 +79,11 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
           <Text style={styles.button}>
             {faveSession ? 'Remove from Faves' : 'Add to Faves'}
           </Text>
-        </LinearGradient>
-      </TouchableHighlight>
+        </LinearGradient> */}
+        <FaveButton>
+          {faveSession ? 'Remove from Faves' : 'Add to Faves'}
+        </FaveButton>
+      </TouchableOpacity>
     </View>
   );
 };

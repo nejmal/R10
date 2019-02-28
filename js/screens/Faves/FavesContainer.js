@@ -1,14 +1,14 @@
-// import liraries
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
+import Text from '../../components/MyAppText.js';
 import Faves from './Faves';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import FavesContext from '../../context';
+import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
 import { colors, fonts } from '../../config/styles';
+import styles from './styles';
 
-// create a component
-// (Stateful) Logic and state
 class FavesContainer extends Component {
   constructor(props) {
     super(props);
@@ -27,23 +27,41 @@ class FavesContainer extends Component {
       <Query
         query={gql`
           {
-            allConducts {
+            allSessions {
               id
               title
               description
-              order
+              location
+              startTime
+              speaker {
+                bio
+                id
+                image
+                name
+                url
+              }
             }
           }
         `}
       >
         {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator size='large' />;
+          if (loading)
+            return (
+              <View style={styles.loader}>
+                <ActivityIndicator size='large' />
+              </View>
+            );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
-          console.log(data);
           return (
             <FavesContext.Consumer>
-              {({ faveIds }) => <Faves data={data} />}
+              {({ faveIds }) => (
+                <Faves
+                  data={formatSessionData(data.allSessions)}
+                  navigation={this.props.navigation}
+                  faveIds={faveIds}
+                />
+              )}
             </FavesContext.Consumer>
           );
         }}
@@ -52,5 +70,4 @@ class FavesContainer extends Component {
   }
 }
 
-//make this component available to the app
 export default FavesContainer;

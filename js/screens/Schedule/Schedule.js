@@ -4,11 +4,12 @@ import Text from '../../components/MyAppText.js';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { colors } from '../../config/styles';
 import styles from './styles';
 
 // (Stateless) Markup only
 const Schedule = ({ navigation, data, faveIds }) => {
-  console.log(data);
+  // console.log(data);
 
   return (
     <View style={styles.container}>
@@ -16,6 +17,7 @@ const Schedule = ({ navigation, data, faveIds }) => {
         renderItem={({ item, index, section }) => (
           // make sure to add an if stmt in touchablehighlight for when there is no speaker
           <TouchableHighlight
+            underlayColor={colors.neutralLight}
             onPress={
               () => {
                 // if (!data.speaker === null) {
@@ -32,7 +34,11 @@ const Schedule = ({ navigation, data, faveIds }) => {
               <View style={styles.locationWrapper}>
                 <Text style={styles.location}>{item.location}</Text>
                 {faveIds.includes(item.id) && (
-                  <Ionicons name='ios-heart' size={16} color='#cf392a' />
+                  <Ionicons
+                    name='ios-heart'
+                    size={16}
+                    color={colors.brandPrimary}
+                  />
                 )}
               </View>
             </View>

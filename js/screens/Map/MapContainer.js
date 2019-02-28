@@ -36,10 +36,10 @@ class MapContainer extends Component {
         `}
       >
         {({ loading, error, data }) => {
-          // if (loading) return <ActivityIndicator size='large' />;
-          // if (error) return <Text>{`Error! ${error.message}`}</Text>;
+          if (loading) return <ActivityIndicator size='large' />;
+          if (error) return <Text>{`Error! ${error.message}`}</Text>;
           // console.log(data);
-          console.log(data);
+
           return <Map data={data} />;
         }}
       </Query>
