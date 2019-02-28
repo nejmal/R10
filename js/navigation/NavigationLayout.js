@@ -101,7 +101,7 @@ export default createBottomTabNavigator(
       activeTintColor: colors.bgLight,
       inactiveTintColor: colors.neutralDark,
       labelStyle: {
-        fontSize: fonts.xs,
+        fontSize: fonts.xs * 0.8,
         fontFamily: 'Montserrat'
       },
       style: {

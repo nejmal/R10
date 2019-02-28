@@ -5,19 +5,28 @@ import { renderSeparator } from '../../lib/helpers/separator';
 import Text from '../../components/MyAppText.js';
 import FavesContext from '../../context';
 import LinearGradient from 'react-native-linear-gradient';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 // import FaveButton from '../../components/FaveButton';
 import styles from './styles';
 
 // (Stateless) Markup only
 const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
   const faveSession = faveIds.find(fave => fave === data.id);
-  console.log('DATA--------------', data);
-  console.log('faveSession', faveSession);
+  // console.log('DATA--------------', data);
+  // console.log('faveSession', faveSession);
 
   return (
     <View style={styles.container}>
       <View style={styles.locationWrapper}>
         <Text style={styles.subtitle}>{data.location}</Text>
+        {faveIds.includes(data.id) && (
+          <Ionicons
+            name='ios-heart'
+            size={18}
+            style={{ paddingVertical: 8 }}
+            color='#cf392a'
+          />
+        )}
       </View>
       <Text style={styles.heading}>{data.title}</Text>
       <Text style={[styles.subtitle, styles.red]}>

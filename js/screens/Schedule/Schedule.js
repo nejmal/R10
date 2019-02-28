@@ -24,12 +24,7 @@ const Schedule = ({ navigation, data, faveIds }) => {
               <View style={styles.locationWrapper}>
                 <Text style={styles.location}>{item.location}</Text>
                 {faveIds.includes(item.id) && (
-                  <Ionicons
-                    name='ios-heart'
-                    size={16}
-                    color='#cf392a'
-                    // style={{ padding: 8 }}
-                  />
+                  <Ionicons name='ios-heart' size={16} color='#cf392a' />
                 )}
               </View>
             </View>
