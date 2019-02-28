@@ -1,14 +1,29 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, Platform } from 'react-native';
 
 export default props => (
+  // <Text
+  //   {...props}
+  //   style={[
+  //     { fontFamily: 'Montserrat', fontSize: 18, fontWeight: '100' },
+  //     props.style
+  //   ]}
+  // >
   <Text
     {...props}
     style={[
-      { fontFamily: 'Montserrat', fontSize: 18, fontWeight: '100' },
+      {
+        // to test out fonts, use serif
+        // fontFamily: Platform.OS === 'ios' ? `Montserrat` : `serif`,
+        fontFamily: Platform.OS === 'ios' ? `Montserrat` : `Montserrat-Regular`,
+        fontSize: 18,
+        fontWeight: '100'
+      },
       props.style
     ]}
   >
     {props.children}
   </Text>
 );
+
+// {Platform.OS === 'ios' ? `ios-${name}` : `md-${name}`}

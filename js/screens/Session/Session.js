@@ -10,7 +10,8 @@ import { renderSeparator } from '../../lib/helpers/separator';
 import Text from '../../components/MyAppText.js';
 import FavesContext from '../../context';
 import LinearGradient from 'react-native-linear-gradient';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from '../../components/Icon';
 import FaveButton from '../../components/Button';
 import { colors } from '../../config/styles';
 import styles from './styles';
@@ -26,8 +27,8 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
       <View style={styles.locationWrapper}>
         <Text style={styles.subtitle}>{data.location}</Text>
         {faveIds.includes(data.id) && (
-          <Ionicons
-            name='ios-heart'
+          <Icon
+            name='heart'
             size={18}
             style={{ paddingVertical: 8 }}
             color={colors.brandPrimary}

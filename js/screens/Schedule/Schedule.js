@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, SectionList, TouchableHighlight } from 'react-native';
+import { View, SectionList, TouchableHighlight, Platform } from 'react-native';
 import Text from '../../components/MyAppText.js';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from '../../components/Icon';
 import { colors } from '../../config/styles';
 import styles from './styles';
 
@@ -34,11 +35,7 @@ const Schedule = ({ navigation, data, faveIds }) => {
               <View style={styles.locationWrapper}>
                 <Text style={styles.location}>{item.location}</Text>
                 {faveIds.includes(item.id) && (
-                  <Ionicons
-                    name='ios-heart'
-                    size={16}
-                    color={colors.brandPrimary}
-                  />
+                  <Icon name='heart' size={16} color={colors.brandPrimary} />
                 )}
               </View>
             </View>

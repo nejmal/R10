@@ -8,9 +8,10 @@ import {
 } from 'react-native';
 import Text from '../../components/MyAppText.js';
 import Button from '../../components/Button';
-import LinearGradient from 'react-native-linear-gradient';
-import styles from './styles';
+// import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { colors } from '../../config/styles';
+import styles from './styles';
 
 // (Stateless) Markup only
 const Speaker = ({ data, navigation }) => {
@@ -26,7 +27,7 @@ const Speaker = ({ data, navigation }) => {
           <Ionicons
             name='ios-close'
             size={40}
-            color='#fff'
+            color={colors.bgLight}
             style={{ marginLeft: 20 }}
           />
         </TouchableOpacity>
@@ -50,8 +51,8 @@ const Speaker = ({ data, navigation }) => {
           <Text style={styles.paragraph}>{data.speaker.bio}</Text>
           <TouchableOpacity
             onPress={() => Linking.openURL(`${data.speaker.url}`)}
-            title='Learn More on Wikipedia'
-            accessibilityLabel='Learn more about this speaker on Wikipedia'
+            title='Read More on Wikipedia'
+            accessibilityLabel='Read more about the speaker on Wikipedia'
           >
             {/* <LinearGradient
               colors={['#8797d6', '#9963ea']}
