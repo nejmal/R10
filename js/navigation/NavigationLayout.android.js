@@ -5,9 +5,9 @@ import FavesScreen from '../screens/Faves';
 import MapScreen from '../screens/Map';
 import ScheduleScreen from '../screens/Schedule';
 import SessionScreen from '../screens/Session';
-import { colors, fonts } from '../config/styles';
+import { colors, fonts, dimensions } from '../config/styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { sharedNavigationOptions } from './config';
+import { sharedNavigationOptions } from './config.ios';
 
 const ScheduleStack = createStackNavigator(
   {
@@ -63,6 +63,7 @@ export default createDrawerNavigator(
     About: AboutStack
   },
   {
+    drawerWidth: dimensions.fullWidth / 2,
     defaultNavigationOptions: ({ navigation }) => ({
       drawerIcon: ({ tintColor }) => {
         const { routeName } = navigation.state;

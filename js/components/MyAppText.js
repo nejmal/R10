@@ -21,7 +21,7 @@ export default props => (
         // use this instead cause it will be easier to see the separation
         ...Platform.select({
           ios: { fontFamily: 'Montserrat' },
-          android: { fontFamily: 'Montserrat-Regular' }
+          android: { fontFamily: 'Montserrat-Light' }
         })
       },
       props.style

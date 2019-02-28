@@ -22,14 +22,13 @@ const Faves = ({ navigation, data, faveIds }) => {
           // make sure to add an if stmt in touchablehighlight for when there is no speaker
           <TouchableHighlight
             underlayColor={colors.neutralLight}
-            onPress={
-              () => {
-                // if (!data.speaker == null) {
+            onPress={() => {
+              if (!data.speaker) {
+                navigation.navigate('', {});
+              } else {
                 navigation.navigate('Session', { sessionData: item });
-                // }
               }
-              // navigation.navigate('Session', { sessionData: item })
-            }
+            }}
           >
             <View style={styles.section}>
               <Text style={[styles.subtitle, styles.black, styles.pb]}>

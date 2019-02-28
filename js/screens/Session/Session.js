@@ -3,20 +3,19 @@ import {
   View,
   Image,
   TouchableHighlight,
-  TouchableOpacity
+  TouchableOpacity,
+  Platform
 } from 'react-native';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
 import Text from '../../components/MyAppText.js';
 import FavesContext from '../../context';
-import LinearGradient from 'react-native-linear-gradient';
 // import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from '../../components/Icon';
 import FaveButton from '../../components/Button';
 import { colors } from '../../config/styles';
 import styles from './styles';
 
-// (Stateless) Markup only
 const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
   const faveSession = faveIds.find(fave => fave === data.id);
   // console.log('DATA--------------', data);
@@ -25,12 +24,12 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
   return (
     <View style={styles.container}>
       <View style={styles.locationWrapper}>
-        <Text style={styles.subtitle}>{data.location}</Text>
+        <Text style={[styles.subtitle, styles.pt0]}>{data.location}</Text>
         {faveIds.includes(data.id) && (
           <Icon
             name='heart'
             size={18}
-            style={{ paddingVertical: 8 }}
+            style={styles.heart}
             color={colors.brandPrimary}
           />
         )}
@@ -40,7 +39,9 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
         {moment(data.startTime).format('LT')}
       </Text>
       <Text style={styles.paragraph}>{data.description}</Text>
-      <Text style={styles.subtitle}>Presented by:</Text>
+      <Text style={[styles.subtitle, styles.pt1, styles.pb0]}>
+        Presented by:
+      </Text>
       <TouchableHighlight
         underlayColor='#e6e6e6'
         onPress={() => navigation.navigate('Speaker', { speakerData: data })}
@@ -48,14 +49,14 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
         <View style={styles.speaker}>
           <Image
             style={{
-              width: 60,
-              height: 60,
+              width: Platform.OS === 'ios' ? 60 : 50,
+              height: Platform.OS === 'ios' ? 60 : 50,
               borderRadius: 30,
               marginRight: 10
             }}
             source={{ uri: data.speaker.image }}
           />
-          <Text style={[styles.subtitle, styles.black]}>
+          <Text style={[styles.subtitle, styles.speakerName]}>
             {data.speaker.name}
           </Text>
         </View>

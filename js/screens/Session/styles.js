@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import {
   loader,
   container,
@@ -11,7 +11,10 @@ import {
   black,
   padding,
   button,
-  margin
+  margin,
+  pt0,
+  pt1,
+  pb0
 } from '../../config/styles';
 
 // define your styles
@@ -29,6 +32,15 @@ const styles = StyleSheet.create({
   subtitle: {
     ...subtitle
   },
+  pt0: { ...pt0 },
+  pt1: { ...pt1 },
+  pb0: { ...pb0 },
+  heart: {
+    ...Platform.select({
+      ios: {},
+      android: {}
+    })
+  },
   heading: { ...heading },
   separator: {
     ...separator
@@ -39,11 +51,16 @@ const styles = StyleSheet.create({
   speaker: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: padding.xs
+    // paddingVertical: padding.sm,
+    ...Platform.select({
+      ios: { paddingVertical: padding.sm },
+      android: { paddingVertical: padding.xs }
+    })
   },
   red: { ...red },
-  black: { ...black },
+  // black: { ...black },
   // FaveButton
+  speakerName: {},
   linearGradient: {
     // flex: 1,
     borderRadius: 50,

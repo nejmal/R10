@@ -55,13 +55,26 @@ class FavesContainer extends Component {
 
           return (
             <FavesContext.Consumer>
-              {({ faveIds }) => (
+              {/* {({ faveIds }) => (
                 <Faves
                   data={formatSessionData(data.allSessions)}
                   navigation={this.props.navigation}
                   faveIds={faveIds}
                 />
-              )}
+              )} */}
+              {({ faveIds }) => {
+                let filterSessions = data.allSessions.filter(session => {
+                  console.log(session);
+                  return faveIds.includes(session.id);
+                });
+                return (
+                  <Faves
+                    data={formatSessionData(filterSessions)}
+                    faveIds={faveIds}
+                    navigation={this.props.navigation}
+                  />
+                );
+              }}
             </FavesContext.Consumer>
           );
         }}

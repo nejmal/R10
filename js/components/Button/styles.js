@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import {
   loader,
   container,
@@ -13,6 +13,7 @@ import {
   button,
   margin
 } from '../../config/styles';
+import { platform } from 'os';
 
 // define your styles
 const styles = StyleSheet.create({

@@ -21,9 +21,9 @@ const Schedule = ({ navigation, data, faveIds }) => {
             underlayColor={colors.neutralLight}
             onPress={
               () => {
-                // if (!data.speaker === null) {
-                navigation.navigate('Session', { sessionData: item });
-                // }
+                if (data.speaker === undefined) {
+                  navigation.navigate('Session', { sessionData: item });
+                }
               }
               // navigation.navigate('Session', { sessionData: item })
             }
