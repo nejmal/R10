@@ -8,13 +8,21 @@ import styles from './styles';
 
 // (Stateless) Markup only
 const Schedule = ({ navigation, data, faveIds }) => {
+  console.log(data);
+
   return (
     <View style={styles.container}>
       <SectionList
         renderItem={({ item, index, section }) => (
+          // make sure to add an if stmt in touchablehighlight for when there is no speaker
           <TouchableHighlight
-            onPress={() =>
-              navigation.navigate('Session', { sessionData: item })
+            onPress={
+              () => {
+                // if (!data.speaker === null) {
+                navigation.navigate('Session', { sessionData: item });
+                // }
+              }
+              // navigation.navigate('Session', { sessionData: item })
             }
           >
             <View style={styles.section}>

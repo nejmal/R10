@@ -54,28 +54,26 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
       </TouchableHighlight>
       <View style={styles.separator} />
 
-      <View>
-        <TouchableHighlight
-          onPress={() => {
-            if (faveSession) {
-              removeFaveId(data.id);
-            } else {
-              setFaveId(data.id);
-            }
-          }}
+      <TouchableHighlight
+        onPress={() => {
+          if (faveSession) {
+            removeFaveId(data.id);
+          } else {
+            setFaveId(data.id);
+          }
+        }}
+      >
+        <LinearGradient
+          colors={['#8797d6', '#9963ea']}
+          start={{ x: 1.0, y: 0.0 }}
+          end={{ x: 0.0, y: 1.0 }}
+          style={styles.linearGradient}
         >
-          <LinearGradient
-            colors={['#8797d6', '#9963ea']}
-            start={{ x: 1.0, y: 0.0 }}
-            end={{ x: 0.0, y: 1.0 }}
-            style={styles.linearGradient}
-          >
-            <Text style={styles.button}>
-              {faveSession ? 'Remove from Faves' : 'Add to Faves'}
-            </Text>
-          </LinearGradient>
-        </TouchableHighlight>
-      </View>
+          <Text style={styles.button}>
+            {faveSession ? 'Remove from Faves' : 'Add to Faves'}
+          </Text>
+        </LinearGradient>
+      </TouchableHighlight>
     </View>
   );
 };

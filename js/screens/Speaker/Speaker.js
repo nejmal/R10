@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Button, TouchableHighlight, Image } from 'react-native';
+import { View, Button, TouchableHighlight, Image, Linking } from 'react-native';
 import Text from '../../components/MyAppText.js';
 // import GradientButton from '../../components/Button.js';
+import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 import FaveButton from '../../components/FaveButton';
 
@@ -30,10 +31,21 @@ const Speaker = ({ data, navigation }) => {
           />
           <Text style={styles.heading}>{data.speaker.name}</Text>
         </View>
-
         <Text style={styles.paragraph}>{data.speaker.bio}</Text>
-
-        <View>{/* <FaveButton /> */}</View>
+        <TouchableHighlight
+          onPress={() => Linking.openURL(`${data.speaker.url}`)}
+          title='Learn More on Wikipedia'
+          accessibilityLabel='Learn more about this speaker on Wikipedia'
+        >
+          <LinearGradient
+            colors={['#8797d6', '#9963ea']}
+            start={{ x: 1.0, y: 0.0 }}
+            end={{ x: 0.0, y: 1.0 }}
+            style={styles.linearGradient}
+          >
+            <Text style={styles.button}>Read More on Wikipedia</Text>
+          </LinearGradient>
+        </TouchableHighlight>
       </View>
     </View>
   );
