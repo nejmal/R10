@@ -15,9 +15,14 @@ export default props => (
       {
         // to test out fonts, use serif
         // fontFamily: Platform.OS === 'ios' ? `Montserrat` : `serif`,
-        fontFamily: Platform.OS === 'ios' ? `Montserrat` : `Montserrat-Regular`,
+        // fontFamily: Platform.OS === 'ios' ? `Montserrat` : `Montserrat-Regular`,
         fontSize: 18,
-        fontWeight: '100'
+        fontWeight: '100',
+        // use this instead cause it will be easier to see the separation
+        ...Platform.select({
+          ios: { fontFamily: 'Montserrat' },
+          android: { fontFamily: 'Montserrat-Regular' }
+        })
       },
       props.style
     ]}

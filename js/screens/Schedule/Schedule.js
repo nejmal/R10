@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, SectionList, TouchableHighlight, Platform } from 'react-native';
+import { View, SectionList, TouchableHighlight } from 'react-native';
 import Text from '../../components/MyAppText.js';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
