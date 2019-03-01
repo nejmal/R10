@@ -2,13 +2,12 @@ import { StyleSheet } from 'react-native';
 import {
   center,
   colors,
-  heading,
+  h1,
   padding,
   paragraph,
   margin,
   subtitle,
-  button,
-  centerRow
+  button
 } from '../../config/styles';
 
 // define your styles
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
   grow: { flex: 1 },
   subtitle: { ...subtitle, color: colors.bgLight, marginRight: 30 },
   center: { ...center, paddingTop: padding.md },
-  heading: { ...heading, paddingVertical: padding.md },
+  h1: { ...h1, paddingVertical: padding.md },
   paragraph: { ...paragraph, paddingHorizontal: padding.md },
   // button
   linearGradient: {

@@ -4,12 +4,11 @@ import {
   separator,
   padding,
   container,
-  loader,
   subtitle,
   subtitle2,
   black,
   pb,
-  centerRow
+  jusCenterRow
 } from '../../config/styles';
 
 const styles = StyleSheet.create({
@@ -29,10 +28,7 @@ const styles = StyleSheet.create({
   subtitle: { ...subtitle, paddingVertical: 0 },
   black: { ...black },
   pb: { ...pb },
-  loader: {
-    ...loader
-  },
-  locationWrapper: { ...centerRow, justifyContent: 'space-between' },
+  locationWrapper: { ...jusCenterRow, justifyContent: 'space-between' },
   location: { ...subtitle2, color: colors.neutralDark }
 });
 

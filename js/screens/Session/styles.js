@@ -3,19 +3,18 @@ import {
   loader,
   container,
   separator,
-  heading,
-  colors,
+  h1,
   subtitle,
   paragraph,
   red,
-  black,
   padding,
   button,
   margin,
   pt0,
   pt1,
   pb0,
-  greyAblackI
+  greyAblackI,
+  jusCenterRow
 } from '../../config/styles';
 
 // define your styles
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
   pt0: { ...pt0 },
   pt1: { ...pt1 },
   pb0: { ...pb0 },
-  heading: { ...heading },
+  h1: { ...h1 },
   separator: {
     ...separator
   },
@@ -44,20 +43,15 @@ const styles = StyleSheet.create({
     ...paragraph
   },
   speaker: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    // paddingVertical: padding.sm,
+    ...jusCenterRow,
     ...Platform.select({
       ios: { paddingVertical: padding.sm },
       android: { paddingVertical: padding.xs }
     })
   },
   red: { ...red },
-  // black: { ...black },
-  // FaveButton
   speakerName: { ...greyAblackI },
   linearGradient: {
-    // flex: 1,
     borderRadius: 50,
     marginVertical: margin.md,
     marginHorizontal: margin.lg * 2

@@ -46,7 +46,7 @@ const Speaker = ({ data, navigation }) => {
               }}
               source={{ uri: data.speaker.image }}
             />
-            <Text style={styles.heading}>{data.speaker.name}</Text>
+            <Text style={styles.h1}>{data.speaker.name}</Text>
           </View>
           <Text style={styles.paragraph}>{data.speaker.bio}</Text>
           <TouchableOpacity

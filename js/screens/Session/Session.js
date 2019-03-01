@@ -34,7 +34,7 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
           />
         )}
       </View>
-      <Text style={styles.heading}>{data.title}</Text>
+      <Text style={styles.h1}>{data.title}</Text>
       <Text style={[styles.subtitle, styles.red]}>
         {moment(data.startTime).format('LT')}
       </Text>

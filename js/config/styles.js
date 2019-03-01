@@ -34,12 +34,15 @@ export const greyAblackI = {
 
 export const center = { justifyContent: 'center', alignItems: 'center' };
 
-export const centerRow = {
-  flexDirection: 'row',
+export const row = { flexDirection: 'row' };
+
+export const jusCenterRow = {
+  ...row,
   justifyContent: 'center'
 };
 
-export const centerCol = {
+export const iteCenterRow = {
+  ...row,
   alignItems: 'center'
 };
 
@@ -112,10 +115,16 @@ export const hr = {
   marginVertical: margin.sm * 1.7
 };
 
-export const heading = {
+export const h1 = {
+  fontSize: fonts.xl,
+  ...Platform.select({
+    ios: { paddingVertical: padding.md, fontWeight: fonts.bold },
+    android: { paddingVertical: padding.xxxs, fontFamily: fonts.secondary }
+  })
+};
+
+export const h2 = {
   fontSize: fonts.lg,
-  // paddingVertical: padding.xs,
-  // fontWeight: fonts.bold,
   ...Platform.select({
     ios: { paddingVertical: padding.md, fontWeight: fonts.bold },
     android: { paddingVertical: padding.xxxs, fontFamily: fonts.secondary }

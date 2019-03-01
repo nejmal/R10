@@ -1,19 +1,13 @@
 import { StyleSheet } from 'react-native';
 import {
-  colors,
-  font,
-  separator,
   margin,
-  padding,
   container,
-  heading,
+  h2,
   subheading,
   center,
   pb,
-  pb0,
   hr,
   loader,
-  centerRow,
   paragraph
 } from '../../config/styles';
 
@@ -28,17 +22,15 @@ const styles = StyleSheet.create({
   hr: {
     ...hr
   },
-  heading: {
-    ...heading
+  h2: {
+    ...h2
   },
   subheading: {
     ...subheading,
     marginLeft: margin.sm
   },
   center: { ...center },
-  pb: { ...pb },
-  conduct: { flexDirection: 'row', alignItems: 'center' },
-  paragraph: { ...paragraph }
+  pb: { ...pb }
 });
 
 export default styles;
