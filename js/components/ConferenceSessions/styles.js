@@ -1,13 +1,9 @@
 import { StyleSheet } from 'react-native';
 import {
   colors,
-  fonts,
   separator,
-  margin,
   padding,
   container,
-  heading,
-  subheading,
   loader,
   subtitle,
   subtitle2,
