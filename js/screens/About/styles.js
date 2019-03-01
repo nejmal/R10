@@ -10,11 +10,16 @@ import {
   subheading,
   center,
   pb,
-  hr
+  hr,
+  loader,
+  centerRow
 } from '../../config/styles';
 
 // define your styles
 const styles = StyleSheet.create({
+  loader: {
+    ...loader
+  },
   container: {
     ...container
   },
@@ -25,10 +30,12 @@ const styles = StyleSheet.create({
     ...heading
   },
   subheading: {
-    ...subheading
+    ...subheading,
+    marginLeft: margin.sm
   },
   center: { ...center },
-  pb: { ...pb }
+  pb: { ...pb },
+  conduct: { flexDirection: 'row', alignItems: 'center' }
 });
 
 export default styles;
