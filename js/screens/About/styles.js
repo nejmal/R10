@@ -9,7 +9,8 @@ import {
   heading,
   subheading,
   center,
-  pb
+  pb,
+  hr
 } from '../../config/styles';
 
 // define your styles
@@ -17,8 +18,8 @@ const styles = StyleSheet.create({
   container: {
     ...container
   },
-  separator: {
-    ...separator
+  hr: {
+    ...hr
   },
   heading: {
     ...heading

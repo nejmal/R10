@@ -25,11 +25,11 @@ export const sharedNavigationOptions = navigation => ({
   headerTintColor: colors.bgLight,
   headerTitleStyle: {
     ...Platform.select({
-      ios: { fontSize: fonts.md },
+      ios: { fontSize: fonts.md * 1.1, fontFamily: 'Montserrat' },
       android: {
-        fontSize: fonts.md * 1.05
+        fontSize: fonts.md * 1.05,
         // fontWeight: '500'
-        // fontFamily: fonts.primary
+        fontFamily: fonts.primary
       }
     })
   },
