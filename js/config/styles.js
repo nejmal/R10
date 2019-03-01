@@ -103,7 +103,13 @@ export const container = {
 export const separator = {
   height: 1,
   backgroundColor: colors.neutralLight,
-  marginVertical: 5
+  marginVertical: margin.sm / 2
+};
+
+export const hr = {
+  height: 1,
+  backgroundColor: colors.neutralLight,
+  marginVertical: margin.sm * 1.7
 };
 
 export const heading = {
@@ -111,7 +117,7 @@ export const heading = {
   // paddingVertical: padding.xs,
   // fontWeight: fonts.bold,
   ...Platform.select({
-    ios: { paddingVertical: padding.xs, fontWeight: fonts.bold },
+    ios: { paddingVertical: padding.md, fontWeight: fonts.bold },
     android: { paddingVertical: padding.xxxs, fontFamily: fonts.secondary }
   })
 };

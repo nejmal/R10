@@ -14,11 +14,6 @@ const About = props => {
     <View style={styles.container}>
       <ScrollView style={styles.scroll}>
         <View style={[styles.center, styles.pb]}>
-          {/* {Platform.OS === 'ios' ? (
-            <Image source={require('../../assets/images/r10_logo2x.png')} />
-          ) : (
-            <Image source={require('../../assets/images/r10_logo.png')} />
-          )} */}
           <Image
             style={{
               width: Platform.OS === 'ios' ? 250 : 200,
@@ -29,7 +24,7 @@ const About = props => {
           />
         </View>
 
-        <View style={styles.separator} />
+        <View style={styles.hr} />
         <Text>
           R10 is a conference that focuses on just about any topic related to
           dev.
