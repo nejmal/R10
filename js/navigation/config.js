@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Platform, TouchableOpacity } from 'react-native';
-import { Header } from 'react-navigation';
+import { Header, HeaderBackButton } from 'react-navigation';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from '../components/Icon';
 import { colors, fonts } from '../config/styles';
@@ -24,20 +24,34 @@ export const sharedNavigationOptions = navigation => ({
   header: props => <GradientHeader {...props} />,
   headerTintColor: colors.bgLight,
   headerTitleStyle: {
-    fontSize: fonts.md
+    ...Platform.select({
+      ios: { fontSize: fonts.md },
+      android: {
+        fontSize: fonts.md * 1.05
+        // fontWeight: '500'
+        // fontFamily: fonts.primary
+      }
+    })
   },
   headerStyle: {
-    backgroundColor: 'transparent',
-    ...Platform.select({
-      android: { fontFamily: 'Montserrat-Light', fontSize: fonts.md }
-    })
-    // shadowOpacity: 3,
-    // elevation: 3
-    // fontFamily: 'Montserrat-Regular'
+    backgroundColor: 'transparent'
   },
   headerLeft: {
     ...Platform.select({
-      ios: <View />,
+      ios: (
+        <View>
+          {navigation.state.routeName === 'Session' ? (
+            <HeaderBackButton
+              onPress={() => {
+                navigation.goBack();
+              }}
+              tintColor={'white'}
+            />
+          ) : (
+            <View />
+          )}
+        </View>
+      ),
       android: (
         <View>
           {navigation.state.routeName === 'Session' ? (

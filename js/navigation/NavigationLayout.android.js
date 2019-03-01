@@ -91,10 +91,8 @@ export default createDrawerNavigator(
       inactiveTintColor: colors.neutralDark,
       labelStyle: {
         fontSize: fonts.sm,
-        fontFamily: 'Montserrat-Regular'
-      },
-      style: {
-        backgroundColor: colors.bgDark
+        fontFamily: fonts.secondary,
+        fontWeight: '100'
       }
     }
   }

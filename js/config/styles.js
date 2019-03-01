@@ -86,6 +86,7 @@ export const fonts = {
   lg: 26,
   xl: 28,
   bold: '500',
+  primary: 'Montserrat-Light',
   secondary: 'Montserrat-Regular'
 };
 

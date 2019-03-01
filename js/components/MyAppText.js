@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, Platform } from 'react-native';
+import { fonts } from '../config/styles';
 
 export default props => (
   // <Text
@@ -21,7 +22,7 @@ export default props => (
         // use this instead cause it will be easier to see the separation
         ...Platform.select({
           ios: { fontFamily: 'Montserrat' },
-          android: { fontFamily: 'Montserrat-Light' }
+          android: { fontFamily: fonts.primary }
         })
       },
       props.style

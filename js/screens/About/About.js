@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList, Image, ScrollView } from 'react-native';
+import { View, FlatList, Image, ScrollView, Platform } from 'react-native';
 import Text from '../../components/MyAppText.js';
 import { renderSeparator } from '../../lib/helpers/separator';
 import styles from './styles';
@@ -14,7 +14,19 @@ const About = props => {
     <View style={styles.container}>
       <ScrollView style={styles.scroll}>
         <View style={[styles.center, styles.pb]}>
-          <Image source={require('../../assets/images/r10_logo.png')} />
+          {/* {Platform.OS === 'ios' ? (
+            <Image source={require('../../assets/images/r10_logo2x.png')} />
+          ) : (
+            <Image source={require('../../assets/images/r10_logo.png')} />
+          )} */}
+          <Image
+            style={{
+              width: Platform.OS === 'ios' ? 250 : 200,
+              height: Platform.OS === 'ios' ? 55 : 45
+            }}
+            resizeMode='contain'
+            source={require('../../assets/images/r10_logo2x.png')}
+          />
         </View>
 
         <View style={styles.separator} />
