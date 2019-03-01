@@ -15,11 +15,7 @@ class FavesContainer extends Component {
   }
 
   static navigationOptions = {
-    title: 'Faves',
-    headerTintColor: colors.bgLight,
-    headerTitleStyle: {
-      fontSize: fonts.md
-    }
+    title: 'Faves'
   };
 
   render() {

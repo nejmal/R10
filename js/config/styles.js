@@ -25,6 +25,13 @@ export const black = {
   color: colors.primary
 };
 
+export const greyAblackI = {
+  ...Platform.select({
+    ios: { color: colors.primary },
+    android: { color: colors.neutralDark }
+  })
+};
+
 export const center = { justifyContent: 'center', alignItems: 'center' };
 
 export const centerRow = {
@@ -156,6 +163,6 @@ export const button = {
   fontSize: fonts.sm,
   ...Platform.select({
     ios: { fontWeight: fonts.bold, paddingVertical: padding.sm },
-    android: { fontFamily: fonts.secondary, paddingVertical: padding.xxs }
+    android: { fontFamily: fonts.secondary, paddingVertical: padding.xs }
   })
 };

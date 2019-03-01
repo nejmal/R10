@@ -14,7 +14,8 @@ import {
   margin,
   pt0,
   pt1,
-  pb0
+  pb0,
+  greyAblackI
 } from '../../config/styles';
 
 // define your styles
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
   red: { ...red },
   // black: { ...black },
   // FaveButton
-  speakerName: {},
+  speakerName: { ...greyAblackI },
   linearGradient: {
     // flex: 1,
     borderRadius: 50,

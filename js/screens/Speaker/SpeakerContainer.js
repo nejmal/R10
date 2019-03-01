@@ -13,11 +13,7 @@ class SpeakerContainer extends Component {
   }
 
   static navigationOptions = {
-    title: 'Speaker',
-    headerTintColor: colors.bgLight,
-    headerTitleStyle: {
-      fontSize: fonts.md
-    }
+    title: 'Speaker'
   };
 
   render() {

@@ -30,11 +30,7 @@ class SessionContainer extends Component {
       //   />
       // ),
       // /* the rest of this config is unchanged */
-      title: 'Session',
-      headerTintColor: colors.bgLight,
-      headerTitleStyle: {
-        fontSize: fonts.md
-      }
+      title: 'Session'
     };
   };
 

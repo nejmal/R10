@@ -14,11 +14,7 @@ class MapContainer extends Component {
   }
 
   static navigationOptions = {
-    title: 'Map',
-    headerTintColor: colors.bgLight,
-    headerTitleStyle: {
-      fontSize: fonts.md
-    }
+    title: 'Map'
   };
 
   render() {

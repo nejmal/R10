@@ -17,11 +17,7 @@ class ScheduleContainer extends Component {
   }
 
   static navigationOptions = {
-    title: 'Schedule',
-    headerTintColor: colors.bgLight,
-    headerTitleStyle: {
-      fontSize: fonts.md
-    }
+    title: 'Schedule'
   };
 
   render() {

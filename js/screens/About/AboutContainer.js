@@ -18,11 +18,7 @@ class AboutContainer extends Component {
   }
 
   static navigationOptions = {
-    title: 'About',
-    headerTintColor: colors.bgLight,
-    headerTitleStyle: {
-      fontSize: fonts.md
-    }
+    title: 'About'
   };
 
   render() {
