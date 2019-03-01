@@ -3,18 +3,12 @@ import { View, SectionList, TouchableHighlight } from 'react-native';
 import Text from '../../components/MyAppText.js';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from '../../components/Icon';
 import { colors } from '../../config/styles';
 import styles from './styles';
 
-const Faves = ({ navigation, data, faveIds }) => {
-  console.log('DATA', data);
-  console.log('faveIds', faveIds);
-
-  // const faveSessions = faveIds.length;
-  const faveSessions = data.filter(fave => fave === data.id);
-  console.log('faveSessions', faveSessions);
+const ConferenceSessions = ({ data, navigation, faveIds }) => {
+  // const { data } = this.props;
   return (
     <View style={styles.container}>
       <SectionList
@@ -27,7 +21,7 @@ const Faves = ({ navigation, data, faveIds }) => {
             underlayColor={colors.neutralLight}
             onPress={() => {
               if (!item.speaker) {
-                navigation.navigate('', {});
+                navigation.navigate('');
               } else {
                 navigation.navigate('Session', { sessionData: item });
               }
@@ -53,4 +47,4 @@ const Faves = ({ navigation, data, faveIds }) => {
   );
 };
 
-export default Faves;
+export default ConferenceSessions;

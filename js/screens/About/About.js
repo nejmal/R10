@@ -36,7 +36,7 @@ class CodeOfConduct extends Component {
 
     Animated.timing(this.state.rotateValue, {
       toValue: 360,
-      duration: 6000
+      duration: 300
     }).start();
   };
 
@@ -57,7 +57,10 @@ class CodeOfConduct extends Component {
 
     return (
       <View>
-        <TouchableHighlight onPress={() => this.onPress()}>
+        <TouchableHighlight
+          underlayColor={colors.neutralLight}
+          onPress={() => this.onPress()}
+        >
           <View style={styles.conduct}>
             <Animated.View style={plusAnimatedStyles}>
               <Icon
@@ -67,13 +70,12 @@ class CodeOfConduct extends Component {
                 color={colors.brandSecondary}
               />
             </Animated.View>
-
             <Text style={styles.subheading}>{item.title}</Text>
           </View>
         </TouchableHighlight>
         {this.state.collapse ? (
           <View>
-            <Text>{item.description}</Text>
+            <Text style={styles.paragraph}>{item.description}</Text>
           </View>
         ) : null}
       </View>
@@ -126,6 +128,8 @@ const About = props => {
           keyExtractor={item => item.id + ''}
           style={styles.list}
         />
+        <View style={styles.hr} />
+        <Text>&copy; RED Academy 2019</Text>
       </ScrollView>
     </View>
   );

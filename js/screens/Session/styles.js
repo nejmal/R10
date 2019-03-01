@@ -36,12 +36,6 @@ const styles = StyleSheet.create({
   pt0: { ...pt0 },
   pt1: { ...pt1 },
   pb0: { ...pb0 },
-  heart: {
-    ...Platform.select({
-      ios: {},
-      android: {}
-    })
-  },
   heading: { ...heading },
   separator: {
     ...separator

@@ -4,7 +4,13 @@
 
 // import liraries
 import React, { Component } from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import {
+  View,
+  ActivityIndicator,
+  UIManager,
+  Platform,
+  LayoutAnimation
+} from 'react-native';
 import Text from '../../components/MyAppText.js';
 import About from './About';
 import { Query } from 'react-apollo';
@@ -17,6 +23,10 @@ import styles from './styles';
 class AboutContainer extends Component {
   constructor(props) {
     super(props);
+    if (Platform.OS === 'android') {
+      UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
   }
 
   static navigationOptions = {
