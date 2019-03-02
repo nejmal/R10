@@ -14,7 +14,7 @@ import {
   pt1,
   pb0,
   greyAblackI,
-  jusCenterRow
+  iteCenterRow
 } from '../../config/styles';
 
 // define your styles
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     ...paragraph
   },
   speaker: {
-    ...jusCenterRow,
+    ...iteCenterRow,
     ...Platform.select({
       ios: { paddingVertical: padding.sm },
       android: { paddingVertical: padding.xs }

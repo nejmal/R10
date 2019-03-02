@@ -7,8 +7,7 @@ import {
   center,
   pb,
   hr,
-  loader,
-  paragraph
+  loader
 } from '../../config/styles';
 
 // define your styles

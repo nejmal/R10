@@ -3,17 +3,14 @@ import { StyleSheet } from 'react-native';
 // define your styles
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2c3e50'
+    ...StyleSheet.absoluteFillObject,
+    height: 400,
+    width: 400,
+    justifyContent: 'flex-end',
+    alignItems: 'center'
   },
-  list: { marginTop: 50 },
-  contact: {
-    // flexDirection: 'row',
-    // alignItems: 'center',
-    // marginLeft: 10
-    flex: 1
+  map: {
+    ...StyleSheet.absoluteFillObject
   }
 });
 
