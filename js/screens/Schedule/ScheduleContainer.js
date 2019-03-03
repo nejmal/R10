@@ -8,6 +8,7 @@ import FavesContext from '../../context';
 import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
 import { colors, fonts } from '../../config/styles';
 import styles from './styles';
+import { setFave } from '../../config/models.js';
 
 // create a component
 // (Stateful) Logic and state
@@ -54,11 +55,13 @@ class ScheduleContainer extends Component {
           // console.log(data);
           return (
             <FavesContext.Consumer>
-              {({ faveIds }) => (
+              {({ faveIds, setFaveId, removeFaveId }) => (
                 <Schedule
                   data={formatSessionData(data.allSessions)}
                   navigation={this.props.navigation}
                   faveIds={faveIds}
+                  setFaveId={setFaveId}
+                  removeFaveId={removeFaveId}
                 />
               )}
             </FavesContext.Consumer>

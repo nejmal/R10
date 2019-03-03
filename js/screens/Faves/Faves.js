@@ -2,8 +2,7 @@ import React from 'react';
 import ConferenceSessions from '../../components/ConferenceSessions';
 
 const Faves = props => {
-  // console.log('DATA', data);
-  // console.log('faveIds', faveIds);
+  console.log('DATA', props);
 
   return <ConferenceSessions {...props} />;
 };
