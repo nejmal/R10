@@ -1,21 +1,27 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import MapView from 'react-native-maps';
+import { View } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
 import styles from './styles';
 
-// (Stateless) Markup only
-const Map = props => {
+const Map = () => {
   return (
     <View style={styles.container}>
       <MapView
         style={styles.map}
         region={{
-          latitude: 37.78825,
-          longitude: -122.4324,
+          latitude: 49.26346,
+          longitude: -123.1381,
           latitudeDelta: 0.015,
           longitudeDelta: 0.0121
         }}
-      />
+      >
+        <Marker
+          coordinate={{ latitude: 49.26346, longitude: -123.1381 }}
+          title={'R10'}
+          description={'R10 Conference'}
+          image={require('../../assets/images/map_pin.png')}
+        />
+      </MapView>
     </View>
   );
 };

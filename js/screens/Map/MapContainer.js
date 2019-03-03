@@ -1,13 +1,9 @@
-// import liraries
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
+import Text from '../../components/MyAppText.js';
 import Map from './Map';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
-import { colors, fonts } from '../../config/styles';
+import styles from './styles';
 
-// create a component
-// (Stateful) Logic and state
 class MapContainer extends Component {
   constructor(props) {
     super(props);
@@ -19,29 +15,21 @@ class MapContainer extends Component {
 
   render() {
     return (
-      <Query
-        query={gql`
-          {
-            allConducts {
-              id
-              title
-              description
-              order
-            }
-          }
-        `}
-      >
+      <View>
         {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator size='large' />;
+          if (loading)
+            return (
+              <View style={styles.loader}>
+                <ActivityIndicator size='large' />
+              </View>
+            );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
-          // console.log(data);
 
           return <Map data={data} />;
         }}
-      </Query>
+      </View>
     );
   }
 }
 
-//make this component available to the app
 export default MapContainer;

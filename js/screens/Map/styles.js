@@ -1,17 +1,18 @@
 import { StyleSheet } from 'react-native';
+import { dimensions, loader } from '../../config/styles';
 
-// define your styles
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: 400,
-    width: 400,
+    height: dimensions.fullHeight,
+    width: dimensions.fullWidth,
     justifyContent: 'flex-end',
     alignItems: 'center'
   },
   map: {
     ...StyleSheet.absoluteFillObject
-  }
+  },
+  loader: { ...loader }
 });
 
 export default styles;
