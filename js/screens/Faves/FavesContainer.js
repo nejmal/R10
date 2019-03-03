@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator, Animated, Easing, Image } from 'react-native';
 import Text from '../../components/MyAppText.js';
 import Icon from '../../components/Icon';
 import Faves from './Faves';
@@ -13,13 +13,35 @@ import styles from './styles';
 class FavesContainer extends Component {
   constructor(props) {
     super(props);
+    this.animatedValue = new Animated.Value(0);
   }
 
   static navigationOptions = {
     title: 'Faves'
   };
 
+  componentDidMount() {
+    this.animate();
+  }
+
+  animate() {
+    this.animatedValue.setValue(0);
+    Animated.timing(this.animatedValue, {
+      toValue: 1,
+      duration: 2000,
+      easing: Easing.linear
+    }).start(() => this.animate());
+  }
+
   render() {
+    const opacity = this.animatedValue.interpolate({
+      // inputRange: [0, 0.25, 0.5, 0.75, 1],
+      // outputRange: [100, 120, 150, 120, 100]
+      // outputRange: [0, 0.5, 1, 0.5, 0]
+      inputRange: [0, 0.5, 1],
+      outputRange: [0, 1, 0]
+    });
+
     return (
       <Query
         query={gql`
@@ -67,10 +89,15 @@ class FavesContainer extends Component {
                 if (!this.filterSessions)
                   return (
                     <View style={styles.container}>
-                      <Icon
-                        name='heart'
-                        size={66}
-                        color={colors.brandPrimary}
+                      <Animated.Image
+                        style={{
+                          // width: pulse,
+                          // height: pulse
+                          opacity,
+                          width: 100,
+                          height: 100
+                        }}
+                        source={require('../../assets/images/heart.png')}
                       />
                       <Text style={styles.h1}>
                         Hey, it looks like you don't have any favourites yet.
