@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator, Animated, Easing, Image } from 'react-native';
 import Text from '../../components/MyAppText.js';
-import Icon from '../../components/Icon';
 import Faves from './Faves';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import FavesContext from '../../context';
 import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
-import { colors } from '../../config/styles';
 import styles from './styles';
 
 class FavesContainer extends Component {
@@ -35,9 +33,6 @@ class FavesContainer extends Component {
 
   render() {
     const opacity = this.animatedValue.interpolate({
-      // inputRange: [0, 0.25, 0.5, 0.75, 1],
-      // outputRange: [100, 120, 150, 120, 100]
-      // outputRange: [0, 0.5, 1, 0.5, 0]
       inputRange: [0, 0.5, 1],
       outputRange: [0, 1, 0]
     });
@@ -83,16 +78,15 @@ class FavesContainer extends Component {
               )} */}
               {({ faveIds, setFaveId, removeFaveId }) => {
                 let filterSessions = data.allSessions.filter(session => {
-                  console.log(session);
+                  console.log('FAVE SESSIONS', session);
                   return faveIds.includes(session.id);
                 });
-                if (!this.filterSessions)
+
+                if (filterSessions.length === 0) {
                   return (
                     <View style={styles.container}>
                       <Animated.Image
                         style={{
-                          // width: pulse,
-                          // height: pulse
                           opacity,
                           width: 100,
                           height: 100
@@ -104,16 +98,17 @@ class FavesContainer extends Component {
                       </Text>
                     </View>
                   );
-
-                return (
-                  <Faves
-                    data={formatSessionData(filterSessions)}
-                    faveIds={faveIds}
-                    navigation={this.props.navigation}
-                    setFaveId={setFaveId}
-                    removeFaveId={removeFaveId}
-                  />
-                );
+                } else {
+                  return (
+                    <Faves
+                      data={formatSessionData(filterSessions)}
+                      faveIds={faveIds}
+                      navigation={this.props.navigation}
+                      setFaveId={setFaveId}
+                      removeFaveId={removeFaveId}
+                    />
+                  );
+                }
               }}
             </FavesContext.Consumer>
           );
