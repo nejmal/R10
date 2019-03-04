@@ -3,6 +3,7 @@ import {
   createStackNavigator,
   createBottomTabNavigator
 } from 'react-navigation';
+import PropTypes from 'prop-types';
 import AboutScreen from '../screens/About';
 import FavesScreen from '../screens/Faves';
 import MapScreen from '../screens/Map';
@@ -57,6 +58,10 @@ const AboutStack = createStackNavigator(
     })
   }
 );
+
+createBottomTabNavigator.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 
 export default createBottomTabNavigator(
   {

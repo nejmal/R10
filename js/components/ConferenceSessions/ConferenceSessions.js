@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, SectionList, TouchableHighlight } from 'react-native';
+import PropTypes from 'prop-types';
 import Text from '../../components/MyAppText';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
@@ -44,6 +45,17 @@ const ConferenceSessions = ({ data, navigation, faveIds }) => {
       />
     </View>
   );
+};
+
+ConferenceSessions.propTypes = {
+  item: PropTypes.shape({
+    speaker: PropTypes.objectOf(PropTypes.string).isRequired,
+    title: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired
+  }),
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.array.isRequired
 };
 
 export default ConferenceSessions;

@@ -6,6 +6,7 @@ import {
   Animated,
   Platform
 } from 'react-native';
+import PropTypes from 'prop-types';
 import Text from '../../components/MyAppText';
 import Icon from '../../components/Icon';
 import { colors } from '../../config/styles';
@@ -78,5 +79,12 @@ class CodeOfConduct extends Component {
     );
   }
 }
+
+CodeOfConduct.propTypes = {
+  item: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
+  })
+};
 
 export default CodeOfConduct;

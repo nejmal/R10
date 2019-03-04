@@ -14,7 +14,17 @@ class MapContainer extends Component {
   };
 
   componentDidMount() {
-    this.setState({ isLoading: false });
+    this.timerHandle = setTimeout(
+      () => this.setState({ isLoading: false }),
+      600
+    );
+  }
+
+  componentWillUnmount() {
+    if (this.timerHandle) {
+      clearTimeout(this.timerHandle);
+      this.timerHandle = 0;
+    }
   }
 
   render() {

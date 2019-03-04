@@ -71,7 +71,6 @@ class FavesContainer extends Component {
             <FavesContext.Consumer>
               {({ faveIds, setFaveId, removeFaveId }) => {
                 let filterSessions = data.allSessions.filter(session => {
-                  console.log('FAVE SESSIONS', session);
                   return faveIds.includes(session.id);
                 });
 

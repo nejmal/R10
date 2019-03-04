@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
+import PropTypes from 'prop-types';
 import AboutScreen from '../screens/About';
 import FavesScreen from '../screens/Faves';
 import MapScreen from '../screens/Map';
@@ -54,6 +55,8 @@ const AboutStack = createStackNavigator(
     })
   }
 );
+
+createDrawerNavigator.propTypes = { navigation: PropTypes.object.isRequired };
 
 export default createDrawerNavigator(
   {

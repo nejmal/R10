@@ -7,6 +7,7 @@ import {
   ScrollView,
   Platform
 } from 'react-native';
+import PropTypes from 'prop-types';
 import Text from '../../components/MyAppText';
 import Button from '../../components/Button';
 import Icon from '../../components/Icon';
@@ -54,6 +55,13 @@ const Speaker = ({ data, navigation }) => {
       </ScrollView>
     </View>
   );
+};
+
+Speaker.propTypes = {
+  data: PropTypes.shape({
+    speaker: PropTypes.objectOf(PropTypes.string).isRequired
+  }),
+  navigation: PropTypes.object.isRequired
 };
 
 export default Speaker;

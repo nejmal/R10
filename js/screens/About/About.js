@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, FlatList, Image, ScrollView, Platform } from 'react-native';
+import PropTypes from 'prop-types';
 import Text from '../../components/MyAppText';
 import CodeOfConduct from '../../components/CodeOfConduct';
 import styles from './styles';
@@ -43,6 +44,12 @@ const About = props => {
       </ScrollView>
     </View>
   );
+};
+
+About.propTypes = {
+  data: PropTypes.shape({
+    allConducts: PropTypes.arrayOf(PropTypes.object).isRequired
+  })
 };
 
 export default About;

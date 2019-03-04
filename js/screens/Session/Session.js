@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Platform
 } from 'react-native';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import Text from '../../components/MyAppText';
 import Icon from '../../components/Icon';
@@ -73,6 +74,20 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
       </TouchableOpacity>
     </View>
   );
+};
+
+Session.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    startTime: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    speaker: PropTypes.objectOf(PropTypes.string).isRequired
+  }),
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.array.isRequired,
+  setFaveId: PropTypes.func.isRequired,
+  removeFaveId: PropTypes.func.isRequired
 };
 
 export default Session;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import PropTypes from 'prop-types';
 import MapView, { Marker } from 'react-native-maps';
 import styles from './styles';
 
@@ -24,6 +25,11 @@ const Map = ({ title, description }) => {
       </MapView>
     </View>
   );
+};
+
+Map.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
 };
 
 export default Map;
