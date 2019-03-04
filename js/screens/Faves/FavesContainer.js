@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ActivityIndicator, Animated, Easing, Image } from 'react-native';
+import { View, ActivityIndicator, Animated, Easing } from 'react-native';
 import Text from '../../components/MyAppText';
 import Faves from './Faves';
 import { Query } from 'react-apollo';
@@ -69,13 +69,6 @@ class FavesContainer extends Component {
 
           return (
             <FavesContext.Consumer>
-              {/* {({ faveIds }) => (
-                <Faves
-                  data={formatSessionData(data.allSessions)}
-                  navigation={this.props.navigation}
-                  faveIds={faveIds}
-                />
-              )} */}
               {({ faveIds, setFaveId, removeFaveId }) => {
                 let filterSessions = data.allSessions.filter(session => {
                   console.log('FAVE SESSIONS', session);

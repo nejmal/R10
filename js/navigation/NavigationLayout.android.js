@@ -67,19 +67,15 @@ export default createDrawerNavigator(
     defaultNavigationOptions: ({ navigation }) => ({
       drawerIcon: ({ tintColor }) => {
         const { routeName } = navigation.state;
-        // let IconComponent = Ionicons;
+
         let iconName;
         if (routeName === 'Schedule') {
-          // iconName = `ios-calendar${focused ? '' : '-outline'}`;
           iconName = `md-calendar`;
         } else if (routeName === 'Map') {
-          // iconName = `ios-map${focused ? '' : '-outline'}`;
           iconName = `md-map`;
         } else if (routeName === 'Faves') {
-          // iconName = `ios-heart${focused ? '' : '-outline'}`;
           iconName = `md-heart`;
         } else if (routeName === 'About') {
-          // iconName = `ios-information-circle${focused ? '' : '-outline'}`;
           iconName = `md-information-circle`;
         }
 

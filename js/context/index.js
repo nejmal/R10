@@ -1,4 +1,3 @@
-// 12. import and export
 import { FavesProvider } from './FavesContext';
 import FavesContext from './FavesContext';
 

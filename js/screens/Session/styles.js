@@ -17,7 +17,6 @@ import {
   iteCenterRow
 } from '../../config/styles';
 
-// define your styles
 const styles = StyleSheet.create({
   loader: {
     ...loader
@@ -57,7 +56,6 @@ const styles = StyleSheet.create({
     marginHorizontal: margin.lg * 2
   },
   button: { ...button }
-  //
 });
 
 export default styles;

@@ -5,8 +5,6 @@ import Speaker from './Speaker';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
-// create a component
-// (Stateful) Logic and state
 class SpeakerContainer extends Component {
   constructor(props) {
     super(props);
@@ -50,7 +48,6 @@ class SpeakerContainer extends Component {
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
           const speakerData = this.props.navigation.getParam('speakerData');
-          // console.log(data);
           return <Speaker data={speakerData} navigation={navigation} />;
         }}
       </Query>
@@ -58,5 +55,4 @@ class SpeakerContainer extends Component {
   }
 }
 
-//make this component available to the app
 export default SpeakerContainer;

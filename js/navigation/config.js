@@ -5,7 +5,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import Icon from '../components/Icon';
 import { colors, fonts } from '../config/styles';
 
-// create gradient header
 const GradientHeader = props => (
   <View style={{ backgroundColor: 'white', overflow: 'hidden' }}>
     <LinearGradient
@@ -18,7 +17,6 @@ const GradientHeader = props => (
   </View>
 );
 
-// put gradient header here
 export const sharedNavigationOptions = navigation => ({
   headerBackTitle: null,
   header: props => <GradientHeader {...props} />,
@@ -28,7 +26,6 @@ export const sharedNavigationOptions = navigation => ({
       ios: { fontSize: fonts.md * 1.1, fontFamily: 'Montserrat' },
       android: {
         fontSize: fonts.md * 1.05,
-        // fontWeight: '500'
         fontFamily: fonts.primary
       }
     })
@@ -56,7 +53,6 @@ export const sharedNavigationOptions = navigation => ({
         <View>
           {navigation.state.routeName === 'Session' ? (
             <TouchableOpacity onPress={() => navigation.goBack()}>
-              {/* {console.log('NAVIGATION', navigation.state.routeName)} */}
               <Icon
                 name='arrow-back'
                 size={25}
@@ -66,7 +62,6 @@ export const sharedNavigationOptions = navigation => ({
             </TouchableOpacity>
           ) : (
             <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
-              {/* {console.log('NAVIGATION', navigation)} */}
               <Icon
                 name='menu'
                 size={25}

@@ -62,7 +62,6 @@ class CodeOfConduct extends Component {
             <Animated.View style={plusAnimatedStyles}>
               <Icon
                 name={this.state.collapse ? 'remove' : 'add'}
-                // size={18}
                 size={Platform.OS === 'ios' ? 18 : 12}
                 color={colors.brandSecondary}
               />

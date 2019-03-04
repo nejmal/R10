@@ -8,8 +8,6 @@ import FavesContext from '../../context';
 import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
 import styles from './styles';
 
-// create a component
-// (Stateful) Logic and state
 class ScheduleContainer extends Component {
   constructor(props) {
     super(props);
@@ -50,7 +48,6 @@ class ScheduleContainer extends Component {
             );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
-          // console.log(data);
           return (
             <FavesContext.Consumer>
               {({ faveIds, setFaveId, removeFaveId }) => (

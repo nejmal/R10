@@ -3,7 +3,6 @@ import Text from '../MyAppText';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 
-// create gradient header
 const Button = props => {
   return (
     <LinearGradient

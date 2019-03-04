@@ -1,4 +1,3 @@
-// for API details, etc.
 import ApolloClient from 'apollo-boost';
 
 const client = new ApolloClient({

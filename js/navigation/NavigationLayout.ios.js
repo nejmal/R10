@@ -68,25 +68,20 @@ export default createBottomTabNavigator(
 
   {
     defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+      tabBarIcon: ({ tintColor }) => {
         const { routeName } = navigation.state;
-        // let IconComponent = Ionicons;
+
         let iconName;
         if (routeName === 'Schedule') {
-          // iconName = `ios-calendar${focused ? '' : '-outline'}`;
           iconName = `ios-calendar`;
         } else if (routeName === 'Map') {
-          // iconName = `ios-map${focused ? '' : '-outline'}`;
           iconName = `ios-map`;
         } else if (routeName === 'Faves') {
-          // iconName = `ios-heart${focused ? '' : '-outline'}`;
           iconName = `ios-heart`;
         } else if (routeName === 'About') {
-          // iconName = `ios-information-circle${focused ? '' : '-outline'}`;
           iconName = `ios-information-circle`;
         }
 
-        // You can return any component that you like here!
         return (
           <Ionicons
             name={iconName}
@@ -109,16 +104,4 @@ export default createBottomTabNavigator(
       }
     }
   }
-  // {
-  //   tabBarOptions: {
-  //     activeTintColor: colors.bgLight,
-  //     inactiveTintColor: colors.neutralDark,
-  //     labelStyle: {
-  //       fontSize: fonts.sm
-  //     },
-  //     style: {
-  //       backgroundColor: colors.bgDark
-  //     }
-  //   }
-  // }
 );

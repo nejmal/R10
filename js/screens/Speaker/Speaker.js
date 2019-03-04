@@ -9,23 +9,17 @@ import {
 } from 'react-native';
 import Text from '../../components/MyAppText';
 import Button from '../../components/Button';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from '../../components/Icon';
 import { colors } from '../../config/styles';
 import styles from './styles';
 
-// (Stateless) Markup only
 const Speaker = ({ data, navigation }) => {
-  // console.log(data);
-  onPress = () => {
-    console.log(data);
-  };
-
   return (
     <View style={styles.modalWrapper}>
       <View style={styles.titleWrapper}>
         <TouchableOpacity onPress={() => navigation.goBack()} title='X'>
-          <Ionicons
-            name='ios-close'
+          <Icon
+            name='close'
             size={40}
             color={colors.bgLight}
             style={styles.close}
@@ -54,14 +48,6 @@ const Speaker = ({ data, navigation }) => {
             title='Read More on Wikipedia'
             accessibilityLabel='Read more about the speaker on Wikipedia'
           >
-            {/* <LinearGradient
-              colors={['#8797d6', '#9963ea']}
-              start={{ x: 1.0, y: 0.0 }}
-              end={{ x: 0.0, y: 1.0 }}
-              style={styles.linearGradient}
-            >
-              <Text style={styles.button}>Read More on Wikipedia</Text>
-            </LinearGradient> */}
             <Button>Read More on Wikipedia</Button>
           </TouchableOpacity>
         </View>

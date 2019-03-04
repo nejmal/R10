@@ -1,8 +1,3 @@
-// stateful component
-// downloaded React Native Snippet
-// use shorthand rnc to get the following below:
-
-// import liraries
 import React, { Component } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import Text from '../../components/MyAppText';
@@ -10,27 +5,15 @@ import Session from './Session';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import FavesContext from '../../context';
-import { colors, fonts } from '../../config/styles';
 import styles from './styles';
-// create a component
-// (Stateful) Logic and state
+
 class SessionContainer extends Component {
   constructor(props) {
     super(props);
   }
 
   static navigationOptions = ({ navigation }) => {
-    const params = navigation.state.params || {};
-
     return {
-      // headerLeft: (
-      //   <Button
-      //     onPress={() => navigation.navigate('Speaker', { speakerData: item })}
-      //     title='Info'
-      //     color='#fff'
-      //   />
-      // ),
-      // /* the rest of this config is unchanged */
       title: 'Session'
     };
   };
@@ -89,5 +72,4 @@ class SessionContainer extends Component {
   }
 }
 
-//make this component available to the app
 export default SessionContainer;

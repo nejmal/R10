@@ -15,8 +15,6 @@ import styles from './styles';
 
 const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
   const faveSession = faveIds.find(fave => fave === data.id);
-  // console.log('DATA--------------', data);
-  // console.log('faveSession', faveSession);
 
   return (
     <View style={styles.container}>
@@ -69,16 +67,6 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
           }
         }}
       >
-        {/* <LinearGradient
-          colors={['#8797d6', '#9963ea']}
-          start={{ x: 1.0, y: 0.0 }}
-          end={{ x: 0.0, y: 1.0 }}
-          style={styles.linearGradient}
-        >
-          <Text style={styles.button}>
-            {faveSession ? 'Remove from Faves' : 'Add to Faves'}
-          </Text>
-        </LinearGradient> */}
         <FaveButton>
           {faveSession ? 'Remove from Faves' : 'Add to Faves'}
         </FaveButton>

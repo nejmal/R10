@@ -1,4 +1,3 @@
-// for shared styles (typography, colours, etc.)
 import { Dimensions, Platform } from 'react-native';
 
 export const dimensions = {
@@ -8,7 +7,7 @@ export const dimensions = {
 
 export const colors = {
   primary: '#000000',
-  neutral: '#666666',
+  neutral: '#666666', // grey
   neutralLight: '#e6e6e6', // light grey
   neutralDark: '#999999', // med grey
   brandPrimary: '#cf392a', // red
@@ -21,13 +20,6 @@ export const colors = {
 export const red = {
   color: colors.brandPrimary
 };
-
-// export const black = {
-//   ...Platform.select({
-//     ios: { color: colors.primary },
-//     android: { color: 'red' }
-//   })
-// };
 
 export const greyAblackI = {
   ...Platform.select({
@@ -101,17 +93,12 @@ export const fonts = {
 export const container = {
   flex: 1,
   backgroundColor: colors.bgLight,
-  // padding: padding.md
-  ...Platform.select({
-    ios: { padding: padding.md },
-    android: { padding: padding.md }
-  })
+  padding: padding.md
 };
 
 export const separator = {
   height: 1,
   backgroundColor: colors.neutralLight,
-  // marginVertical: margin.sm / 2,
   ...Platform.select({
     ios: { marginVertical: margin.sm / 2 },
     android: { marginVertical: margin.sm / 3 }
@@ -125,7 +112,6 @@ export const hr = {
 };
 
 export const h1 = {
-  // fontSize: fonts.xl,
   ...Platform.select({
     ios: {
       paddingVertical: padding.md,
@@ -141,7 +127,6 @@ export const h1 = {
 };
 
 export const h2 = {
-  // fontSize: fonts.lg,
   ...Platform.select({
     ios: {
       paddingVertical: padding.md,
@@ -168,7 +153,6 @@ export const subheading = {
 export const subtitle = {
   color: colors.neutralDark,
   fontSize: fonts.sm,
-  // fontWeight: fonts.bold,
   paddingVertical: padding.xs,
   ...Platform.select({
     ios: { fontWeight: fonts.bold },
@@ -177,8 +161,6 @@ export const subtitle = {
 };
 
 export const subtitle2 = {
-  // fontSize: fonts.xs,
-  // fontWeight: fonts.bold,
   ...Platform.select({
     ios: { fontWeight: fonts.bold, fontSize: fonts.xs },
     android: { fontFamily: fonts.secondary, fontSize: fonts.xxs }
@@ -206,8 +188,6 @@ export const button = {
   color: colors.bgLight,
   backgroundColor: 'transparent',
   textAlign: 'center',
-  // paddingVertical: padding.sm,
-  // fontWeight: fonts.bold,
   fontSize: fonts.sm,
   ...Platform.select({
     ios: { fontWeight: fonts.bold, paddingVertical: padding.sm },

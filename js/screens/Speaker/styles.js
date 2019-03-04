@@ -8,10 +8,10 @@ import {
   margin,
   subtitle,
   button,
-  dimensions
+  dimensions,
+  jusCenterRow
 } from '../../config/styles';
 
-// define your styles
 const styles = StyleSheet.create({
   modalWrapper: {
     backgroundColor: colors.bgDark,
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
   },
   modal: {
     backgroundColor: colors.bgLight,
-    // margin: margin.sm * 1.5,
     marginTop: margin.lg,
     borderRadius: 10,
     flex: 1,
@@ -30,9 +29,7 @@ const styles = StyleSheet.create({
     })
   },
   titleWrapper: {
-    flexDirection: 'row',
-    // marginTop: margin.lg * 2,
-    justifyContent: 'center',
+    ...jusCenterRow,
     ...Platform.select({
       ios: { marginTop: margin.lg * 2 },
       android: { marginTop: margin.lg * 1.5 }
@@ -49,7 +46,6 @@ const styles = StyleSheet.create({
   center: { ...center, paddingTop: padding.md },
   h1: { ...h1, paddingVertical: padding.md },
   paragraph: { ...paragraph, paddingHorizontal: padding.md },
-  // button
   linearGradient: {
     borderRadius: 50,
     marginVertical: margin.md,

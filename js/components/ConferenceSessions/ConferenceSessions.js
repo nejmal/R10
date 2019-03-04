@@ -8,7 +8,6 @@ import { colors } from '../../config/styles';
 import styles from './styles';
 
 const ConferenceSessions = ({ data, navigation, faveIds }) => {
-  // const { data } = this.props;
   return (
     <View style={styles.container}>
       <SectionList
