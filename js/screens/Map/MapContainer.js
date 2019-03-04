@@ -27,13 +27,20 @@ class MapContainer extends Component {
     }
   }
 
+  onLoad = () => {
+    // Hack to prevent non loading images
+    this.showSecondaryMarker = true;
+    this.forceUpdate();
+  };
+
   render() {
+    const { onPress } = this.props;
     return this.state.isLoading ? (
       <View style={styles.loader}>
         <ActivityIndicator size='large' />
       </View>
     ) : (
-      <Map title={'R10'} description={'R10 Conference'} />
+      <Map title={'R10'} description={'R10 Conference'} onPress={onPress} />
     );
   }
 }
