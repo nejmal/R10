@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import Text from '../../components/MyAppText.js';
+import Text from '../../components/MyAppText';
 import Schedule from './Schedule';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import FavesContext from '../../context';
 import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
-import { colors, fonts } from '../../config/styles';
 import styles from './styles';
-import { setFave } from '../../config/models.js';
 
 // create a component
 // (Stateful) Logic and state
@@ -72,5 +70,4 @@ class ScheduleContainer extends Component {
   }
 }
 
-// make this component available to the app
 export default ScheduleContainer;

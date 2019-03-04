@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, SectionList, TouchableHighlight } from 'react-native';
-import Text from '../../components/MyAppText.js';
+import Text from '../../components/MyAppText';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
 import Icon from '../../components/Icon';
@@ -16,7 +16,7 @@ const ConferenceSessions = ({ data, navigation, faveIds }) => {
         renderSectionHeader={({ section: { title } }) => (
           <Text style={styles.header}>{moment(title).format('LT')}</Text>
         )}
-        renderItem={({ item, index, section }) => (
+        renderItem={({ item }) => (
           <TouchableHighlight
             underlayColor={colors.neutralLight}
             onPress={() => {
@@ -28,7 +28,7 @@ const ConferenceSessions = ({ data, navigation, faveIds }) => {
             }}
           >
             <View style={styles.section}>
-              <Text style={[styles.subtitle, styles.black, styles.pb]}>
+              <Text style={[styles.subtitle, styles.greyAblackI, styles.pb]}>
                 {item.title}
               </Text>
               <View style={styles.locationWrapper}>

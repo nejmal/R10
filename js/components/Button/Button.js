@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import Text from '../MyAppText.js';
+import React from 'react';
+import Text from '../MyAppText';
 import LinearGradient from 'react-native-linear-gradient';
-import { colors } from '../../config/styles';
 import styles from './styles';
 
 // create gradient header

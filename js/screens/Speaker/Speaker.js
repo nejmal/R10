@@ -4,11 +4,11 @@ import {
   TouchableOpacity,
   Image,
   Linking,
-  ScrollView
+  ScrollView,
+  Platform
 } from 'react-native';
-import Text from '../../components/MyAppText.js';
+import Text from '../../components/MyAppText';
 import Button from '../../components/Button';
-// import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { colors } from '../../config/styles';
 import styles from './styles';
@@ -28,7 +28,7 @@ const Speaker = ({ data, navigation }) => {
             name='ios-close'
             size={40}
             color={colors.bgLight}
-            style={{ marginLeft: 20 }}
+            style={styles.close}
           />
         </TouchableOpacity>
         <View style={styles.grow} />
@@ -40,8 +40,8 @@ const Speaker = ({ data, navigation }) => {
           <View style={styles.center}>
             <Image
               style={{
-                width: 120,
-                height: 120,
+                width: Platform.OS === 'ios' ? 120 : 100,
+                height: Platform.OS === 'ios' ? 120 : 100,
                 borderRadius: 60
               }}
               source={{ uri: data.speaker.image }}

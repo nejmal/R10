@@ -9,7 +9,7 @@ import {
   LayoutAnimation,
   Animated
 } from 'react-native';
-import Text from '../../components/MyAppText.js';
+import Text from '../../components/MyAppText';
 import Icon from '../../components/Icon';
 import CodeOfConduct from '../../components/CodeOfConduct';
 import { colors } from '../../config/styles';

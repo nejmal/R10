@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import {
   center,
   colors,
@@ -7,7 +7,8 @@ import {
   paragraph,
   margin,
   subtitle,
-  button
+  button,
+  dimensions
 } from '../../config/styles';
 
 // define your styles
@@ -18,15 +19,30 @@ const styles = StyleSheet.create({
   },
   modal: {
     backgroundColor: colors.bgLight,
-    margin: margin.sm * 1.5,
+    // margin: margin.sm * 1.5,
     marginTop: margin.lg,
     borderRadius: 10,
-    flex: 1
+    flex: 1,
+    height: dimensions.fullHeight,
+    ...Platform.select({
+      ios: { margin: margin.sm * 1.5 },
+      android: { margin: margin.sm / 2 }
+    })
   },
   titleWrapper: {
     flexDirection: 'row',
-    marginTop: margin.lg * 2,
-    justifyContent: 'center'
+    // marginTop: margin.lg * 2,
+    justifyContent: 'center',
+    ...Platform.select({
+      ios: { marginTop: margin.lg * 2 },
+      android: { marginTop: margin.lg * 1.5 }
+    })
+  },
+  close: {
+    ...Platform.select({
+      ios: { marginLeft: margin.md },
+      android: { marginLeft: margin.sm }
+    })
   },
   grow: { flex: 1 },
   subtitle: { ...subtitle, color: colors.bgLight, marginRight: 30 },

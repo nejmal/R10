@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
+import Text from '../../components/MyAppText';
 import Speaker from './Speaker';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import { colors, fonts } from '../../config/styles';
 
 // create a component
 // (Stateful) Logic and state
@@ -41,7 +41,12 @@ class SpeakerContainer extends Component {
         `}
       >
         {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator size='large' />;
+          if (loading)
+            return (
+              <View style={styles.loader}>
+                <ActivityIndicator size='large' />
+              </View>
+            );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
           const speakerData = this.props.navigation.getParam('speakerData');

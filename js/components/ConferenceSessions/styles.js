@@ -6,7 +6,7 @@ import {
   container,
   subtitle,
   subtitle2,
-  black,
+  greyAblackI,
   pb,
   jusCenterRow
 } from '../../config/styles';
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     padding: padding.sm
   },
   subtitle: { ...subtitle, paddingVertical: 0 },
-  black: { ...black },
+  greyAblackI: { ...greyAblackI },
   pb: { ...pb },
   locationWrapper: { ...jusCenterRow, justifyContent: 'space-between' },
   location: { ...subtitle2, color: colors.neutralDark }

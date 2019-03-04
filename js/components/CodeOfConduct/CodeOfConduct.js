@@ -3,9 +3,10 @@ import {
   View,
   TouchableHighlight,
   LayoutAnimation,
-  Animated
+  Animated,
+  Platform
 } from 'react-native';
-import Text from '../../components/MyAppText.js';
+import Text from '../../components/MyAppText';
 import Icon from '../../components/Icon';
 import { colors } from '../../config/styles';
 import styles from './styles';
@@ -61,7 +62,8 @@ class CodeOfConduct extends Component {
             <Animated.View style={plusAnimatedStyles}>
               <Icon
                 name={this.state.collapse ? 'remove' : 'add'}
-                size={18}
+                // size={18}
+                size={Platform.OS === 'ios' ? 18 : 12}
                 color={colors.brandSecondary}
               />
             </Animated.View>

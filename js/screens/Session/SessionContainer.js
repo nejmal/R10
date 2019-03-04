@@ -4,7 +4,8 @@
 
 // import liraries
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator, Button } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
+import Text from '../../components/MyAppText';
 import Session from './Session';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';

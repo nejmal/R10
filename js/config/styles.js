@@ -1,5 +1,5 @@
 // for shared styles (typography, colours, etc.)
-import { StyleSheet, Dimensions, Platform } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 export const dimensions = {
   fullHeight: Dimensions.get('window').height,
@@ -8,6 +8,7 @@ export const dimensions = {
 
 export const colors = {
   primary: '#000000',
+  neutral: '#666666',
   neutralLight: '#e6e6e6', // light grey
   neutralDark: '#999999', // med grey
   brandPrimary: '#cf392a', // red
@@ -21,14 +22,17 @@ export const red = {
   color: colors.brandPrimary
 };
 
-export const black = {
-  color: colors.primary
-};
+// export const black = {
+//   ...Platform.select({
+//     ios: { color: colors.primary },
+//     android: { color: 'red' }
+//   })
+// };
 
 export const greyAblackI = {
   ...Platform.select({
     ios: { color: colors.primary },
-    android: { color: colors.neutralDark }
+    android: { color: colors.neutral }
   })
 };
 
@@ -83,6 +87,7 @@ export const pt1 = {
 };
 
 export const fonts = {
+  xxs: 12,
   xs: 14,
   sm: 16,
   md: 18,
@@ -106,7 +111,11 @@ export const container = {
 export const separator = {
   height: 1,
   backgroundColor: colors.neutralLight,
-  marginVertical: margin.sm / 2
+  // marginVertical: margin.sm / 2,
+  ...Platform.select({
+    ios: { marginVertical: margin.sm / 2 },
+    android: { marginVertical: margin.sm / 3 }
+  })
 };
 
 export const hr = {
@@ -116,25 +125,44 @@ export const hr = {
 };
 
 export const h1 = {
-  fontSize: fonts.xl,
+  // fontSize: fonts.xl,
   ...Platform.select({
-    ios: { paddingVertical: padding.md, fontWeight: fonts.bold },
-    android: { paddingVertical: padding.xxxs, fontFamily: fonts.secondary }
+    ios: {
+      paddingVertical: padding.md,
+      fontWeight: fonts.bold,
+      fontSize: fonts.xl
+    },
+    android: {
+      paddingVertical: padding.xxxs,
+      fontFamily: fonts.secondary,
+      fontSize: fonts.lg
+    }
   })
 };
 
 export const h2 = {
-  fontSize: fonts.lg,
+  // fontSize: fonts.lg,
   ...Platform.select({
-    ios: { paddingVertical: padding.md, fontWeight: fonts.bold },
-    android: { paddingVertical: padding.xxxs, fontFamily: fonts.secondary }
+    ios: {
+      paddingVertical: padding.md,
+      fontWeight: fonts.bold,
+      fontSize: fonts.lg
+    },
+    android: {
+      paddingVertical: padding.sm,
+      fontFamily: fonts.secondary,
+      fontSize: fonts.md
+    }
   })
 };
 
 export const subheading = {
   color: colors.brandSecondary,
   paddingVertical: padding.xs,
-  fontWeight: fonts.bold
+  ...Platform.select({
+    ios: { fontWeight: fonts.bold },
+    android: { fontFamily: fonts.secondary }
+  })
 };
 
 export const subtitle = {
@@ -149,8 +177,12 @@ export const subtitle = {
 };
 
 export const subtitle2 = {
-  fontSize: fonts.xs,
-  fontWeight: fonts.bold
+  // fontSize: fonts.xs,
+  // fontWeight: fonts.bold,
+  ...Platform.select({
+    ios: { fontWeight: fonts.bold, fontSize: fonts.xs },
+    android: { fontFamily: fonts.secondary, fontSize: fonts.xxs }
+  })
 };
 
 export const loader = {

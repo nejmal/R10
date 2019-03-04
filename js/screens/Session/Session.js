@@ -7,10 +7,7 @@ import {
   Platform
 } from 'react-native';
 import moment from 'moment';
-import { renderSeparator } from '../../lib/helpers/separator';
-import Text from '../../components/MyAppText.js';
-import FavesContext from '../../context';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
+import Text from '../../components/MyAppText';
 import Icon from '../../components/Icon';
 import FaveButton from '../../components/Button';
 import { colors } from '../../config/styles';

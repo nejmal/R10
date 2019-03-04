@@ -2,7 +2,6 @@
 // downloaded React Native Snippet
 // use shorthand rnc to get the following below:
 
-// import liraries
 import React, { Component } from 'react';
 import {
   View,
@@ -11,7 +10,7 @@ import {
   Platform,
   LayoutAnimation
 } from 'react-native';
-import Text from '../../components/MyAppText.js';
+import Text from '../../components/MyAppText';
 import About from './About';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
