@@ -16,8 +16,6 @@ This is a project produced from the following lessons from Week 8:
 
 ## ![Image of Meowtown](https://github.com/nejmal/R10/blob/master/R10.png)
 
----
-
 ## Installation
 
 NOTE: NodeJS is required and yarn is recommended.
