@@ -15,7 +15,7 @@ class CodeOfConduct extends Component {
     super(props);
     this.state = {
       collapse: false,
-      rotateValue: new Animated.Value()
+      rotateValue: new Animated.Value(0.03)
     };
   }
 
@@ -32,7 +32,7 @@ class CodeOfConduct extends Component {
 
     Animated.timing(this.state.rotateValue, {
       toValue: 360,
-      duration: 300
+      duration: 1000
     }).start();
   };
 

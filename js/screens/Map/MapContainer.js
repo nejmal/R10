@@ -1,14 +1,8 @@
-// import liraries
 import React, { Component } from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import Text from '../../components/MyAppText.js';
 import Map from './Map';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
 import styles from './styles';
 
-// create a component
-// (Stateful) Logic and state
 class MapContainer extends Component {
   constructor(props) {
     super(props);
@@ -34,5 +28,4 @@ class MapContainer extends Component {
   }
 }
 
-//make this component available to the app
 export default MapContainer;
