@@ -25,7 +25,7 @@ NOTE: NodeJS is required and yarn is recommended.
 1. Clone this project.
 
 ```bash
-git clone https://github.com/nejmal/R10.git
+git clone < https://github.com/nejmal/R10.git >
 ```
 
 2. Setup
