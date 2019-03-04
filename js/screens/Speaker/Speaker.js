@@ -21,7 +21,7 @@ const Speaker = ({ data, navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()} title='X'>
           <Icon
             name='close'
-            size={40}
+            size={Platform.OS === 'ios' ? 40 : 30}
             color={colors.bgLight}
             style={styles.close}
           />
