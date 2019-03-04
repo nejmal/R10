@@ -33,7 +33,7 @@ class CodeOfConduct extends Component {
 
     Animated.timing(this.state.rotateValue, {
       toValue: 360,
-      duration: 1000
+      duration: 300
     }).start();
   };
 
