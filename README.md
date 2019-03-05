@@ -20,54 +20,54 @@ This is a project produced from the following lessons from Week 8:
 
 NOTE: NodeJS is required and yarn is recommended.
 
-1. Clone this project.
+Clone this project.
 
-```bash
+```
 git clone < project directory .git >
 ```
 
-2. Setup
+### Setup
 
-### iOS
+#### iOS
 
-1. Install the dependencies.
+Install the dependencies.
 
-```bash
+```
 yarn install
 react-native run-ios
 ```
 
 or
 
-```bash
+```
 npm install
 ```
 
-2. Run the project.
+Run the project.
 
-```bash
+```
 react-native run-ios
 ```
 
 ---
 
-### Android
+#### Android
 
-1. Install the dependencies.
+Install the dependencies.
 
-```bash
+```
 yarn install
 ```
 
 or
 
-```bash
+```
 npm install
 ```
 
-2. Start the emulator.
+Start the emulator.
 
-3. Run the project.
+Run the project.
 
 ```bash
 react-native run-android
@@ -91,3 +91,9 @@ react-native run-android
 Below are the subsequent learning outcomes:
 
 Having a base stylesheet is very useful and more efficient for styling.
+
+---
+
+## Author
+
+[Jennifer Lam](https://github.com/nejmal)
