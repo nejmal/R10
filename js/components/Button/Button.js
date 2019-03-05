@@ -1,5 +1,5 @@
 import React from 'react';
-import Text from '../MyAppText';
+import Text from '../Text';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 

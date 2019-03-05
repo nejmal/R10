@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator, Animated, Easing } from 'react-native';
-import Text from '../../components/MyAppText';
+import Text from '../../components/Text';
 import Faves from './Faves';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';

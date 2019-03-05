@@ -7,7 +7,7 @@ import {
   Platform
 } from 'react-native';
 import PropTypes from 'prop-types';
-import Text from '../../components/MyAppText';
+import Text from '../../components/Text';
 import Icon from '../../components/Icon';
 import { colors } from '../../config/styles';
 import styles from './styles';

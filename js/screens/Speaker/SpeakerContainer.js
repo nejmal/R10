@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import Text from '../../components/MyAppText';
+import Text from '../../components/Text';
 import Speaker from './Speaker';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';

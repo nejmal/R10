@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, FlatList, Image, ScrollView, Platform } from 'react-native';
 import PropTypes from 'prop-types';
-import Text from '../../components/MyAppText';
+import Text from '../../components/Text';
 import CodeOfConduct from '../../components/CodeOfConduct';
 import styles from './styles';
 

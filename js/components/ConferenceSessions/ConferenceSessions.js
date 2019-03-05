@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, SectionList, TouchableHighlight } from 'react-native';
 import PropTypes from 'prop-types';
-import Text from '../../components/MyAppText';
+import Text from '../../components/Text';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
 import Icon from '../../components/Icon';

@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Text from '../../components/MyAppText';
+import Text from '../../components/Text';
 import Icon from '../../components/Icon';
 import FaveButton from '../../components/Button';
 import { colors } from '../../config/styles';
