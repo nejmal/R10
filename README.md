@@ -1,6 +1,7 @@
 # R10
 
 A cross-platform (iOS/Android) mobile application for a developer conference that is happening soon.
+The app offers features like conference schedule, sessions, favourite sessions, and speaker bios.
 
 ---
 
