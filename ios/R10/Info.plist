@@ -53,6 +53,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
