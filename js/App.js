@@ -4,8 +4,13 @@ import client from './config/api';
 import RootStackNavigator from './navigation/RootStackNavigator';
 import { StatusBar } from 'react-native';
 import { FavesProvider } from './context';
+import SplashScreen from 'react-native-splash-screen';
 
 export default class App extends Component {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
+
   render() {
     StatusBar.setBarStyle('light-content', true);
 
