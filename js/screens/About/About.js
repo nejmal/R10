@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, FlatList, Image, ScrollView, Platform } from 'react-native';
 import PropTypes from 'prop-types';
-import Text from '../../components/Text';
+import CustomText from '../../components/CustomText';
 import CodeOfConduct from '../../components/CodeOfConduct';
 import styles from './styles';
 
@@ -23,16 +23,16 @@ const About = props => {
         </View>
 
         <View style={styles.hr} />
-        <Text>
+        <CustomText>
           R10 is a conference that focuses on just about any topic related to
           dev.
-        </Text>
-        <Text style={styles.h2}>Date & Venue</Text>
-        <Text>
+        </CustomText>
+        <CustomText style={styles.h2}>Date & Venue</CustomText>
+        <CustomText>
           The R10 conference will take place on Tuesday, June 27, 2017 in
           Vancouver, BC.
-        </Text>
-        <Text style={styles.h2}>Code of Conduct</Text>
+        </CustomText>
+        <CustomText style={styles.h2}>Code of Conduct</CustomText>
         <FlatList
           data={data.allConducts}
           renderItem={({ item }) => <CodeOfConduct item={item} />}
@@ -40,7 +40,7 @@ const About = props => {
           style={styles.list}
         />
         <View style={styles.hr} />
-        <Text>&copy; RED Academy 2019</Text>
+        <CustomText>&copy; RED Academy 2019</CustomText>
       </ScrollView>
     </View>
   );

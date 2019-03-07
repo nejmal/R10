@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, SectionList, TouchableHighlight } from 'react-native';
 import PropTypes from 'prop-types';
-import Text from '../../components/Text';
+import CustomText from '../../components/CustomText';
 import moment from 'moment';
 import { renderSeparator } from '../../lib/helpers/separator';
 import Icon from '../../components/Icon';
@@ -14,7 +14,9 @@ const ConferenceSessions = ({ data, navigation, faveIds }) => {
       <SectionList
         sections={data}
         renderSectionHeader={({ section: { title } }) => (
-          <Text style={styles.header}>{moment(title).format('LT')}</Text>
+          <CustomText style={styles.header}>
+            {moment(title).format('LT')}
+          </CustomText>
         )}
         renderItem={({ item }) => (
           <TouchableHighlight
@@ -28,11 +30,13 @@ const ConferenceSessions = ({ data, navigation, faveIds }) => {
             }}
           >
             <View style={styles.section}>
-              <Text style={[styles.subtitle, styles.greyAblackI, styles.pb]}>
+              <CustomText
+                style={[styles.subtitle, styles.greyAblackI, styles.pb]}
+              >
                 {item.title}
-              </Text>
+              </CustomText>
               <View style={styles.locationWrapper}>
-                <Text style={styles.location}>{item.location}</Text>
+                <CustomText style={styles.location}>{item.location}</CustomText>
                 {faveIds.includes(item.id) && (
                   <Icon name='heart' size={16} color={colors.brandPrimary} />
                 )}

@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Text from '../../components/Text';
+import CustomText from '../../components/CustomText';
 import Icon from '../../components/Icon';
 import FaveButton from '../../components/Button';
 import { colors } from '../../config/styles';
@@ -20,7 +20,9 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
   return (
     <View style={styles.container}>
       <View style={styles.locationWrapper}>
-        <Text style={[styles.subtitle, styles.pt0]}>{data.location}</Text>
+        <CustomText style={[styles.subtitle, styles.pt0]}>
+          {data.location}
+        </CustomText>
         {faveIds.includes(data.id) && (
           <Icon
             name='heart'
@@ -30,14 +32,14 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
           />
         )}
       </View>
-      <Text style={styles.h1}>{data.title}</Text>
-      <Text style={[styles.subtitle, styles.red]}>
+      <CustomText style={styles.h1}>{data.title}</CustomText>
+      <CustomText style={[styles.subtitle, styles.red]}>
         {moment(data.startTime).format('LT')}
-      </Text>
-      <Text style={styles.paragraph}>{data.description}</Text>
-      <Text style={[styles.subtitle, styles.pt1, styles.pb0]}>
+      </CustomText>
+      <CustomText style={styles.paragraph}>{data.description}</CustomText>
+      <CustomText style={[styles.subtitle, styles.pt1, styles.pb0]}>
         Presented by:
-      </Text>
+      </CustomText>
       <TouchableHighlight
         underlayColor='#e6e6e6'
         onPress={() => navigation.navigate('Speaker', { speakerData: data })}
@@ -52,9 +54,9 @@ const Session = ({ navigation, data, faveIds, setFaveId, removeFaveId }) => {
             }}
             source={{ uri: data.speaker.image }}
           />
-          <Text style={[styles.subtitle, styles.speakerName]}>
+          <CustomText style={[styles.subtitle, styles.speakerName]}>
             {data.speaker.name}
-          </Text>
+          </CustomText>
         </View>
       </TouchableHighlight>
       <View style={styles.separator} />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import Text from '../../components/Text';
+import CustomText from '../../components/CustomText';
 import Schedule from './Schedule';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -46,7 +46,8 @@ class ScheduleContainer extends Component {
                 <ActivityIndicator size='large' />
               </View>
             );
-          if (error) return <Text>{`Error! ${error.message}`}</Text>;
+          if (error)
+            return <CustomText>{`Error! ${error.message}`}</CustomText>;
 
           return (
             <FavesContext.Consumer>

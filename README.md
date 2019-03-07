@@ -5,21 +5,13 @@ The app offers features like conference schedule, sessions, favourite sessions, 
 
 ---
 
-This is a project produced from the following lessons from Week 8:
-
-1. Intro to React Native
-2. Navigation and Dependencies
-3. Mobile Databases
-4. Android Apps with React Native
-5. React Native Animation
+## ![Image of Meowtown](https://github.com/nejmal/R10/blob/master/R10.png)
 
 ---
 
-## ![Image of Meowtown](https://github.com/nejmal/R10/blob/master/R10.png)
-
 ## Installation
 
-NOTE: NodeJS is required and yarn is recommended.
+**NOTE: Yarn is recommended.**
 
 Clone this project.
 
@@ -35,13 +27,6 @@ Install the dependencies.
 
 ```
 yarn install
-react-native run-ios
-```
-
-or
-
-```
-npm install
 ```
 
 Run the project.
@@ -60,13 +45,7 @@ Install the dependencies.
 yarn install
 ```
 
-or
-
-```
-npm install
-```
-
-Start the emulator.
+Start the emulator (Android 9 (Pie) SDK is recommended).
 
 Run the project.
 
@@ -89,12 +68,24 @@ react-native run-android
 
 ## Personal Learnings
 
+### App Developer (Project 4)
+
+This is a project produced from the following lessons from Week 8:
+
+1. Intro to React Native
+2. Navigation and Dependencies
+3. Mobile Databases
+4. Android Apps with React Native
+5. React Native Animation
+
 Below are the subsequent learning outcomes:
 
-Having a base stylesheet is very useful and more efficient for styling.
+- Having a base stylesheet is very useful and more efficient for styling.
 
 ---
 
 ## Author
 
-[Jennifer Lam](https://github.com/nejmal)
+[Jennifer Lam](https://github.com/nejmal), App Developer student at [RED Academy](https://redacademy.com/vancouver/).
+
+Let's connect on [LinkedIn](https://www.linkedin.com/in/jenniferlam-/).

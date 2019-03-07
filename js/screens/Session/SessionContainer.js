@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import Text from '../../components/Text';
+import CustomText from '../../components/CustomText';
 import Session from './Session';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -49,7 +49,8 @@ class SessionContainer extends Component {
                 <ActivityIndicator size='large' />
               </View>
             );
-          if (error) return <Text>{`Error! ${error.message}`}</Text>;
+          if (error)
+            return <CustomText>{`Error! ${error.message}`}</CustomText>;
 
           const sessionData = this.props.navigation.getParam('sessionData');
 

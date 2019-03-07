@@ -8,7 +8,7 @@ import {
   Platform
 } from 'react-native';
 import PropTypes from 'prop-types';
-import Text from '../../components/Text';
+import CustomText from '../../components/CustomText';
 import Button from '../../components/Button';
 import Icon from '../../components/Icon';
 import { colors } from '../../config/styles';
@@ -27,7 +27,7 @@ const Speaker = ({ data, navigation }) => {
           />
         </TouchableOpacity>
         <View style={styles.grow} />
-        <Text style={styles.subtitle}>About the Speaker</Text>
+        <CustomText style={styles.subtitle}>About the Speaker</CustomText>
         <View style={styles.grow} />
       </View>
       <ScrollView>
@@ -41,9 +41,9 @@ const Speaker = ({ data, navigation }) => {
               }}
               source={{ uri: data.speaker.image }}
             />
-            <Text style={styles.h1}>{data.speaker.name}</Text>
+            <CustomText style={styles.h1}>{data.speaker.name}</CustomText>
           </View>
-          <Text style={styles.paragraph}>{data.speaker.bio}</Text>
+          <CustomText style={styles.paragraph}>{data.speaker.bio}</CustomText>
           <TouchableOpacity
             onPress={() => Linking.openURL(`${data.speaker.url}`)}
             title='Read More on Wikipedia'

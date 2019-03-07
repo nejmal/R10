@@ -7,7 +7,7 @@ import {
   Platform
 } from 'react-native';
 import PropTypes from 'prop-types';
-import Text from '../../components/Text';
+import CustomText from '../../components/CustomText';
 import Icon from '../../components/Icon';
 import { colors } from '../../config/styles';
 import styles from './styles';
@@ -67,12 +67,12 @@ class CodeOfConduct extends Component {
                 color={colors.brandSecondary}
               />
             </Animated.View>
-            <Text style={styles.subheading}>{item.title}</Text>
+            <CustomText style={styles.subheading}>{item.title}</CustomText>
           </View>
         </TouchableHighlight>
         {this.state.collapse ? (
           <View>
-            <Text>{item.description}</Text>
+            <CustomText>{item.description}</CustomText>
           </View>
         ) : null}
       </View>

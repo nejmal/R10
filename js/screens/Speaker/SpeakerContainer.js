@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import Text from '../../components/Text';
+import CustomText from '../../components/CustomText';
 import Speaker from './Speaker';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -45,7 +45,8 @@ class SpeakerContainer extends Component {
                 <ActivityIndicator size='large' />
               </View>
             );
-          if (error) return <Text>{`Error! ${error.message}`}</Text>;
+          if (error)
+            return <CustomText>{`Error! ${error.message}`}</CustomText>;
 
           const speakerData = this.props.navigation.getParam('speakerData');
           return <Speaker data={speakerData} navigation={navigation} />;
