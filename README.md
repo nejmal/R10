@@ -5,7 +5,7 @@ The app offers features like conference schedule, sessions, favourite sessions, 
 
 ---
 
-## ![Image of Meowtown](https://github.com/nejmal/R10/blob/master/R10.png)
+## ![Image of R10](https://github.com/nejmal/R10/blob/master/R10.png)
 
 ---
 
@@ -86,6 +86,6 @@ Below are the subsequent learning outcomes:
 
 ## Author
 
-[Jennifer Lam](https://github.com/nejmal), App Developer student at [RED Academy](https://redacademy.com/vancouver/).
+[Jennifer Lam](https://github.com/nejmal), Full-Stack Developer student at [RED Academy](https://redacademy.com/vancouver/).
 
 Let's connect on [LinkedIn](https://www.linkedin.com/in/jenniferlam-/).
